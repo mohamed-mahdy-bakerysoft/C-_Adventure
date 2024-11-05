@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{1BF9886E-A1B7-4504-81C4-00AFFB1C4E1E}|Text_Based_Game\\Text_Based_Game.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game\\Text_Based_Game\\Text_Based_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1BF9886E-A1B7-4504-81C4-00AFFB1C4E1E}|Text_Based_Game\\Text_Based_Game.vcxproj|solutionrelative:Text_Based_Game\\Text_Based_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF9886E-A1B7-4504-81C4-00AFFB1C4E1E}|Text_Based_Game\\Text_Based_Game.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game\\Text_Based_Game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1BF9886E-A1B7-4504-81C4-00AFFB1C4E1E}|Text_Based_Game\\Text_Based_Game.vcxproj|solutionrelative:Text_Based_Game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game\\Text_Based_Game\\Player.cpp",
+              "RelativeDocumentMoniker": "Text_Based_Game\\Player.cpp",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game\\Text_Based_Game\\Player.cpp",
+              "RelativeToolTip": "Text_Based_Game\\Player.cpp",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-05T15:16:17.008Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +42,9 @@
               "RelativeDocumentMoniker": "Text_Based_Game\\Text_Based_Game.cpp",
               "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game\\Text_Based_Game\\Text_Based_Game.cpp",
               "RelativeToolTip": "Text_Based_Game\\Text_Based_Game.cpp",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAowAsAAAB/AAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAQwIIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-31T19:52:42.95Z",
+              "WhenOpened": "2024-11-05T14:11:36.463Z",
               "EditorCaption": ""
             }
           ]

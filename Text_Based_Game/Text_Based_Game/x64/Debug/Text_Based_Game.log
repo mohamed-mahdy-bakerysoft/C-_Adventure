@@ -1,2 +1,5 @@
-﻿  Text_Based_Game.cpp
+﻿  Player.cpp
+  SaveAndLoad.cpp
+  Text_Based_Game.cpp
+  Generating Code...
   Text_Based_Game.vcxproj -> C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game\x64\Debug\Text_Based_Game.exe
