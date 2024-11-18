@@ -57,6 +57,7 @@ void Player::displayStatus()
     cout << "Player Name: " << name << endl;
     cout << "Health: " << health << endl;
     cout << "Inventory: ";
+
     if (inventory.empty())
     {
         cout << "Empty" << endl;
