@@ -14,13 +14,15 @@ void clearScreen();
 void startNewGame();
 void loadExistingGame();
 
-int main() {
+int main()
+{
     displayTitle(); // Show the title of the game
 
     int choice;
 
     // Main game loop
-    do {
+    do
+    {
         // Show main menu options
         cout << "Welcome to the Prison Break Game!" << endl;
         cout << " " << endl;
@@ -36,7 +38,8 @@ int main() {
 
         clearScreen(); // Clear the console after the choice
 
-        switch (choice) {
+        switch (choice)
+        {
         case 1:
             startNewGame();
             break;
@@ -61,7 +64,8 @@ int main() {
 }
 
 // This function shows the title of the game
-void displayTitle() {
+void displayTitle()
+{
     const string red = "\033[31m"; // Set the text color to red
     const string reset = "\033[0m"; // Reset the text color to normal
 
@@ -91,7 +95,8 @@ void displayTitle() {
 }
 
 // Function to clear the console screen
-void clearScreen() {
+void clearScreen()
+{
 #ifdef _WIN32
     system("cls"); // For Windows
 #else
@@ -100,7 +105,8 @@ void clearScreen() {
 }
 
 // Function to start a new game
-void startNewGame() {
+void startNewGame()
+{
     string playerName;
 
     cout << "Enter your name: ";
@@ -113,18 +119,21 @@ void startNewGame() {
 }
 
 // Function to load an existing game
-void loadExistingGame() {
+void loadExistingGame()
+{
     string playerName;
 
     cout << "Enter your name to load your game: ";
     cin >> playerName;
 
     Player player(playerName); // Create a new player instance
-    if (loadPlayerData(player, playerName)) {
+    if (loadPlayerData(player, playerName))
+    {
         cout << "Game loaded successfully!" << endl;
         player.displayStatus(); // Display loaded player status
     }
-    else {
+    else
+    {
         cout << "No saved game found for '" << playerName << "'." << endl;
     }
 }
