@@ -20,9 +20,12 @@ void ManageWindow::DisplayTitle() {
 
 }
 
+
+
+
 void ManageWindow::NewGame()
 {
-	DisplayText();
+	IntroText();
 }
 
 void ManageWindow::LoadGame()
@@ -32,7 +35,10 @@ void ManageWindow::LoadGame()
 
 
 
-
+void ManageWindow::ClearScreen()
+{
+	system("cls");
+}
 
 
 
@@ -52,13 +58,12 @@ void ManageWindow::GameLoop() {
 		switch (choice) {
 
 		case 1:
-			system("cls"); // clear screen
+			ClearScreen(); // clear screen
 			NewGame();
 			break;
 
 		case 2:
-			system("cls"); // clear screen
-
+			ClearScreen(); // clear screen
 			LoadGame();
 			break;
 
@@ -78,40 +83,38 @@ void ManageWindow::GameLoop() {
 
 }
 
-void ManageWindow::InGameLoop()  // loop used after main menu
+void ManageWindow::IntroGameLoop()
 {
+
 	bool isRunning = true;
 	int choice = 0;
-	const std::string YELLOW = "\033[33m";
 
 	while (isRunning)
 	{
-		cout << YELLOW << "1 Leave cell" << '\n';
-		cout << YELLOW << "2 Stay in cell" << '\n';
-		cout << YELLOW << "3 Rest" << '\n';
-		cout << YELLOW << "4 Quit Game" << '\n';
-
+		cout << "1 Leave Cell" << '\n';
+		cout << "2 Rest" << '\n';
+		cout << "3 Quit" << '\n';
 
 		cin >> choice;
 
 		switch (choice) {
 
 		case 1:
-			system("cls"); // clear screen
-
+			ClearScreen(); // clear screen
+			Leave_Cell_Option(); //tree 1
 			break;
 
 		case 2:
-
+			ClearScreen(); // clear screen
+			Rest_Option(); //tree 2
 			break;
 
 		case 3:
 
 			break;
 
-		case 4:
+		default:
 			cout << "quitting game ";
-			break;
 
 
 		}
@@ -119,5 +122,20 @@ void ManageWindow::InGameLoop()  // loop used after main menu
 
 
 	}
-
 }
+
+
+
+
+void ManageWindow::IntroText()
+{
+	std::cout << "You’ve been in this hellhole for too long, and the days have begun to blur together—dark, cold, and endless.\n";
+	std::cout << "The prison is a labyrinth of cement and iron, and you’ve memorized every inch of it.\n";
+	std::cout << "You can feel the weight of the guards' eyes on you every time you walk through the halls.\n";
+	std::cout << "But you’ve also learned the rhythms. You know when to stay invisible, when to be quiet, when to act.\n";
+	IntroGameLoop();
+}
+
+
+
+

@@ -127,11 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HoldText.cpp" />
+    <ClCompile Include="Tree 1.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Managewin.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SaveAndLoadcpp.cpp" />
+    <ClCompile Include="Tree 2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ManageWin.h" />

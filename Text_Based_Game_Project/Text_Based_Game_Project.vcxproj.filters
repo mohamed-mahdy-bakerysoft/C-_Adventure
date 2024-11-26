@@ -27,7 +27,10 @@
     <ClCompile Include="Managewin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HoldText.cpp">
+    <ClCompile Include="Tree 1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree 2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
