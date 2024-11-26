@@ -12,7 +12,13 @@ public:
 
 	void GameLoop();
 
+	void NewGame();
 
+	void LoadGame();
+
+	void DisplayText();
+
+	void InGameLoop();
 
 
 

@@ -27,6 +27,9 @@
     <ClCompile Include="Managewin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HoldText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">

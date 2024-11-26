@@ -4,8 +4,8 @@
 using namespace std;
 
 void ManageWindow::DisplayTitle() {
-
-	std::cout << R"(                                                                                                                                
+	const std::string RED = "\033[31m";
+	std::cout << RED << R"(                                                                                                                                
 88888888ba               88                                          88888888ba                                       88         
 88      "8b              ""                                          88      "8b                                      88         
 88      ,8P                                                          88      ,8P                                      88         
@@ -20,28 +20,46 @@ void ManageWindow::DisplayTitle() {
 
 }
 
+void ManageWindow::NewGame()
+{
+	DisplayText();
+}
+
+void ManageWindow::LoadGame()
+{
+	// save and load
+}
+
+
+
+
+
 
 
 void ManageWindow::GameLoop() {
 
 	bool isRunning = true;
 	int choice = 0;
-
+	const std::string RESET = "\033[0m"; // Reset to default color
 	while (isRunning)
 	{
-		cout << "1 New Game" << '\n';
-		cout << "2 Continue" << '\n';
-		cout << "3 Quit" << '\n';
+		cout << RESET << "1 New Game" << '\n';
+		cout << RESET << "2 Continue" << '\n';
+		cout << RESET << "3 Quit" << '\n';
 
 		cin >> choice;
 
 		switch (choice) {
 
 		case 1:
-
+			system("cls"); // clear screen
+			NewGame();
 			break;
 
 		case 2:
+			system("cls"); // clear screen
+
+			LoadGame();
 			break;
 
 		case 3:
@@ -50,6 +68,50 @@ void ManageWindow::GameLoop() {
 
 		default:
 			cout << "quitting game ";
+
+
+		}
+		isRunning = false;
+
+
+	}
+
+}
+
+void ManageWindow::InGameLoop()  // loop used after main menu
+{
+	bool isRunning = true;
+	int choice = 0;
+	const std::string YELLOW = "\033[33m";
+
+	while (isRunning)
+	{
+		cout << YELLOW << "1 Leave cell" << '\n';
+		cout << YELLOW << "2 Stay in cell" << '\n';
+		cout << YELLOW << "3 Rest" << '\n';
+		cout << YELLOW << "4 Quit Game" << '\n';
+
+
+		cin >> choice;
+
+		switch (choice) {
+
+		case 1:
+			system("cls"); // clear screen
+
+			break;
+
+		case 2:
+
+			break;
+
+		case 3:
+
+			break;
+
+		case 4:
+			cout << "quitting game ";
+			break;
 
 
 		}
