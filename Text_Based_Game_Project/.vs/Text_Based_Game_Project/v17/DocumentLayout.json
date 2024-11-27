@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -47,19 +51,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.cpp",
+              "RelativeDocumentMoniker": "Player.cpp",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.cpp",
+              "RelativeToolTip": "Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T19:28:00.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.h",
               "RelativeDocumentMoniker": "Player.h",
               "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.h",
               "RelativeToolTip": "Player.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-27T18:58:20.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ChanceManager.h",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\ChanceManager.h",
               "RelativeDocumentMoniker": "ChanceManager.h",
@@ -67,12 +84,11 @@
               "RelativeToolTip": "ChanceManager.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T17:32:30.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T17:32:30.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Enemy.h",
               "RelativeDocumentMoniker": "Enemy.h",
@@ -84,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Tree 1.cpp",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 1.cpp",
               "RelativeDocumentMoniker": "Tree 1.cpp",
@@ -96,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Tree 2.cpp",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 2.cpp",
               "RelativeDocumentMoniker": "Tree 2.cpp",
@@ -108,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
@@ -116,12 +132,11 @@
               "RelativeToolTip": "Main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T21:42:00.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T21:42:00.974Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ManageWin.h",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\ManageWin.h",
               "RelativeDocumentMoniker": "ManageWin.h",
@@ -129,12 +144,11 @@
               "RelativeToolTip": "ManageWin.h",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T21:47:26.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T21:47:26.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Managewin.cpp",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Managewin.cpp",
               "RelativeDocumentMoniker": "Managewin.cpp",
@@ -142,8 +156,7 @@
               "RelativeToolTip": "Managewin.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T21:50:32.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T21:50:32.488Z"
             }
           ]
         }
