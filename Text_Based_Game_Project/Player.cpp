@@ -1,10 +1,9 @@
 #include "Player.h"
 
-// Method to reduce health
 void Player::takeDamage(int damage)
 {
     health -= damage;
-    if (health < 0) health = 0;  //health can't go below zero
+    if (health < 0) health = 0;  // Ensure health cant go below 0
 }
 
 // Method to heal the player
@@ -14,7 +13,7 @@ void Player::heal(int amount)
     if (health > 100) health = 100;  // Cap health at 100
 }
 
-// Method to collect an item (add it to the inventory)
+// Method to collect an item
 void Player::collectItem(const std::string& item)
 {
     inventory.push_back(item);
@@ -31,8 +30,7 @@ void Player::displayStats() const
     {
         std::cout << "No items collected.\n";
     }
-    else
-    {
+    else {
         for (const auto& item : inventory)
         {
             std::cout << item << " ";

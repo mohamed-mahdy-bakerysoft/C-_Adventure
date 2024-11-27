@@ -1,46 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\",
+  "WorkspaceRootPath": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\",
   "Documents": [
     {
-<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-=======
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
-      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\ChanceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:ChanceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\ManageWin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\ManageWin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:ManageWin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Managewin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Managewin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Managewin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Tree 2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\ChanceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:ChanceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Tree 2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Tree 1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Tree 1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CACE1812-22BB-4740-9CDC-93CFE95AEA35}|Text_Based_Game_Project.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,65 +46,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.cpp",
               "RelativeDocumentMoniker": "Player.cpp",
               "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.cpp",
               "RelativeToolTip": "Player.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-27T19:28:00.484Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Player.h",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.h",
               "RelativeDocumentMoniker": "Player.h",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Player.h",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Player.h",
               "RelativeToolTip": "Player.h",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-=======
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABEAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-27T18:58:20.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 5,
-=======
-              "DocumentIndex": 1,
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
               "Title": "ChanceManager.h",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\ChanceManager.h",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\ChanceManager.h",
               "RelativeDocumentMoniker": "ChanceManager.h",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\ChanceManager.h",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\ChanceManager.h",
               "RelativeToolTip": "ChanceManager.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAqAAAA",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-27T17:32:30.643Z"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 6,
-=======
-              "DocumentIndex": 2,
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
               "Title": "Enemy.h",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Enemy.h",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Enemy.h",
               "RelativeDocumentMoniker": "Enemy.h",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Enemy.h",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Enemy.h",
               "RelativeToolTip": "Enemy.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -116,15 +100,11 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 8,
-=======
-              "DocumentIndex": 6,
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
               "Title": "Tree 1.cpp",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Tree 1.cpp",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 1.cpp",
               "RelativeDocumentMoniker": "Tree 1.cpp",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Tree 1.cpp",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 1.cpp",
               "RelativeToolTip": "Tree 1.cpp",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAAsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -132,15 +112,11 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 7,
-=======
-              "DocumentIndex": 5,
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
               "Title": "Tree 2.cpp",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Tree 2.cpp",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 2.cpp",
               "RelativeDocumentMoniker": "Tree 2.cpp",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Tree 2.cpp",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Tree 2.cpp",
               "RelativeToolTip": "Tree 2.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -148,20 +124,15 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 2,
-=======
-              "DocumentIndex": 7,
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
               "Title": "Main.cpp",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Main.cpp",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Main.cpp",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Main.cpp",
               "RelativeToolTip": "Main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-25T21:42:00.974Z"
-<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -177,30 +148,13 @@
             },
             {
               "$type": "Document",
-=======
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ManageWin.h",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\ManageWin.h",
-              "RelativeDocumentMoniker": "ManageWin.h",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\ManageWin.h",
-              "RelativeToolTip": "ManageWin.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T21:47:26.536Z"
-            },
-            {
-              "$type": "Document",
->>>>>>> 9ddff4b3243310614f42f6809fcd49080599edea
               "DocumentIndex": 4,
               "Title": "Managewin.cpp",
-              "DocumentMoniker": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Managewin.cpp",
+              "DocumentMoniker": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Managewin.cpp",
               "RelativeDocumentMoniker": "Managewin.cpp",
-              "ToolTip": "C:\\Users\\Mike\\source\\C-_Adventure\\Text_Based_Game_Project\\Managewin.cpp",
+              "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\Text_Based_Game_Project\\Managewin.cpp",
               "RelativeToolTip": "Managewin.cpp",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAqwHEAAAAJAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-25T21:50:32.488Z"
             }
