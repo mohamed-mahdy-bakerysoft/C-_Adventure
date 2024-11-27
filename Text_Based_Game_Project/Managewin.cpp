@@ -1,4 +1,5 @@
 #include "ManageWin.h"
+#include "Inventory.h"
 #include <iostream>
 
 using namespace std;
@@ -92,8 +93,9 @@ void ManageWindow::IntroGameLoop()
 	while (isRunning)
 	{
 		cout << "1 Leave Cell" << '\n';
-		cout << "2 Rest" << '\n';
-		cout << "3 Quit" << '\n';
+		cout << "2 Stay in cell" << '\n';
+		cout << "3 Rest" << '\n';
+		cout << "4 Quit" << '\n';
 
 		cin >> choice;
 
@@ -106,10 +108,15 @@ void ManageWindow::IntroGameLoop()
 
 		case 2:
 			ClearScreen(); // clear screen
-			Rest_Option(); //tree 2
+			Stay_In_Cell_Option(); //tree 3
 			break;
 
 		case 3:
+			ClearScreen(); // clear screen
+			Rest_Option(); //tree 2
+			break;
+
+		case 4:
 
 			break;
 
@@ -129,10 +136,10 @@ void ManageWindow::IntroGameLoop()
 
 void ManageWindow::IntroText()
 {
-	std::cout << "You’ve been in this hellhole for too long, and the days have begun to blur together—dark, cold, and endless.\n";
-	std::cout << "The prison is a labyrinth of cement and iron, and you’ve memorized every inch of it.\n";
+	std::cout << "Youâ€™ve been in this hellhole for too long, and the days have begun to blur togetherâ€”dark, cold, and endless.\n";
+	std::cout << "The prison is a labyrinth of cement and iron, and youâ€™ve memorized every inch of it.\n";
 	std::cout << "You can feel the weight of the guards' eyes on you every time you walk through the halls.\n";
-	std::cout << "But you’ve also learned the rhythms. You know when to stay invisible, when to be quiet, when to act.\n";
+	std::cout << "But youâ€™ve also learned the rhythms. You know when to stay invisible, when to be quiet, when to act.\n";
 	IntroGameLoop();
 }
 
