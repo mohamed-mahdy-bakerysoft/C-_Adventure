@@ -135,6 +135,8 @@
     <ClCompile Include="Tree 2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChanceManager.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="ManageWin.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="save_and_load.h" />
