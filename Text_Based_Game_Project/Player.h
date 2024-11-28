@@ -2,28 +2,29 @@
 #include <string>
 #include <vector>
 #include <iostream>
+using namespace std;
 
 class Player
 {
 private:
-    std::string name;            // Player's name
+    string name;            // Player's name
     int health;                  // Player's health
     int score;                   // Player's score
-    std::vector<std::string> inventory;  // Player's inventory
+    vector<string> inventory;  // Player's inventory
 
 public:
     // Constructor to initialize player
-    Player(std::string playerName, int initialHealth = 100, int initialScore = 0)
+    Player(string playerName, int initialHealth = 100, int initialScore = 0)
         : name(playerName), health(initialHealth), score(initialScore)
     {}
 
     // Getter and Setter for name
-    std::string getName() const
+    string getName() const
     {
         return name;
     }
 
-    void setName(const std::string& playerName)
+    void setName(const string& playerName)
     {
         name = playerName;
     }
@@ -51,13 +52,13 @@ public:
     }
 
     // Getter for inventory
-    std::vector<std::string> getInventory() const
+    vector<string> getInventory() const
     {
         return inventory;
     }
 
     void takeDamage(int damage);        // Reduces health
     void heal(int amount);              // Restores health
-    void collectItem(const std::string& item);   // Add an item
+    void collectItem(const string& item);   // Add an item
     void displayStats() const;         // Display current stats
 };

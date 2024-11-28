@@ -1,4 +1,5 @@
 #include "Player.h"
+using namespace std;
 
 // Method to reduce health
 void Player::takeDamage(int damage)
@@ -29,20 +30,20 @@ void Player::collectItem(const std::string& item)
 // Method to display the player's current stats
 void Player::displayStats() const
 {
-    std::cout << "Name: " << name << "\n";
-    std::cout << "Health: " << health << "/100\n";
-    std::cout << "Score: " << score << "\n";
-    std::cout << "Inventory: ";
+    cout << "Name: " << name << "\n";
+    cout << "Health: " << health << "/100\n";
+    cout << "Score: " << score << "\n";
+    cout << "Inventory: ";
     if (inventory.empty())
     {
-        std::cout << "No items collected.\n";
+        cout << "No items collected.\n";
     }
     else
     {
         for (const auto& item : inventory)
         {
-            std::cout << item << " ";
+            cout << item << " ";
         }
-        std::cout << "\n";
+        cout << "\n";
     }
 }
