@@ -1,11 +1,16 @@
 #include "ManageWin.h"
 #include "Inventory.h"
 #include "DayCounter.h"
+#include "ChanceManager.h"
+#include "Player.h"
 #include <iostream>
 using namespace std;
 
 Inventory inventory; // reference to inventory class
-DayCounter Dc // reference to the day counter class
+DayCounter Dc; // reference to the day counter class
+Chances chances; // reference to chances class
+Player player; // reference to player class
+
 
 
 
@@ -46,6 +51,46 @@ void ManageWindow::LeaveYard()
 
 }
 
+void ManageWindow::ExamineCanteen()
+{
+
+	cout << "I think I'll take this spoon for the road" << '\n';
+	inventory.addItem("spoon");
+
+}
+
+void ManageWindow::LeaveCanteen()
+{
+	cout << "The slop here never gets better" << '\n';
+
+
+
+
+}
+
+
+void ManageWindow::PrisonerAmbush()
+{
+
+	bool isRunning = true;
+
+	int choice;
+	cout << "oh no that prisoner has a sharp object";
+	cout << player.getHealth();
+	cout << "1 Fight " << '\n';
+	cin >> choice;
+
+
+
+	if (choice == 1)
+	{
+		chances.fight();
+	}
+	else {
+		isRunning = false;
+	}
+
+}
 
 
 
@@ -76,8 +121,29 @@ void ManageWindow::PrisonYardOption()
 
 void ManageWindow::CanteenOption()
 {
+
+
+	bool isRunning = true;
 	cout << "Ah the canteen home of the slop, top and flop that we digest" << '\n';
 
+
+	int choice;
+	cout << "1 Examine canteen " << '\n';
+	cout << "2 Leave canteen" << '\n';
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		void ExamineCanteen();
+
+	}
+	else if (choice == 2)
+	{
+		void LeaveCanteen();
+		void PrisonerAmbush();
+	}
+	else {
+		isRunning = false;
+	}
 }
 
-void

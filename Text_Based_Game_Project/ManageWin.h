@@ -63,6 +63,14 @@ public:
 
 	void LeaveYard();
 
+	//void CanteenOption()
+
+	void ExamineCanteen();
+
+	void LeaveCanteen();
+
+	void PrisonerAmbush();
+
 
 };
 #endif // MANAGEWIN_H
