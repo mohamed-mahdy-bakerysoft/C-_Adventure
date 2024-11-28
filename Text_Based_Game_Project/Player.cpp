@@ -20,7 +20,7 @@ void Player::heal(int amount)
     }
 }
 
-// Method to collect an item (add it to the inventory)
+// Method to collect an item
 void Player::collectItem(const std::string& item)
 {
     inventory.push_back(item);

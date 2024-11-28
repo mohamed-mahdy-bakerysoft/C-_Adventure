@@ -56,7 +56,6 @@ public:
         return inventory;
     }
 
-    // Methods to interact with player
     void takeDamage(int damage);        // Reduces health
     void heal(int amount);              // Restores health
     void collectItem(const std::string& item);   // Add an item
