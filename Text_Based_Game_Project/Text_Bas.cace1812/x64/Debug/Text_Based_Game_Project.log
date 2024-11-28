@@ -2,3 +2,7 @@
 /SaveAndLoadcpp.cpp(1,1): error C1083: Cannot open source file: 'SaveAndLoadcpp.cpp': No such file or directory
   (compiling source file '/SaveAndLoadcpp.cpp')
   
+  Tree_3.cpp
+C:\Users\Mike\source\C-_Adventure\Text_Based_Game_Project\Tree_3.cpp(128,3): error C3861: 'Random_Enemy': identifier not found
+C:\Users\Mike\source\C-_Adventure\Text_Based_Game_Project\Tree_3.cpp(138,3): error C3861: 'Random_Enemy': identifier not found
+  Generating Code...

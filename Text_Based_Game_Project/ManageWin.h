@@ -59,9 +59,9 @@ public:
 
 	void serveSentence();
 
+	void ExamineYard();
 
-
-
+	void LeaveYard();
 
 
 };

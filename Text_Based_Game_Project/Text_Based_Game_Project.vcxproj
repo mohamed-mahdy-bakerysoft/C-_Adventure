@@ -127,16 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DayCounter.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Tree 1.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Managewin.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SaveAndLoadcpp.cpp" />
     <ClCompile Include="Tree 2.cpp" />
+    <ClCompile Include="Tree_3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChanceManager.h" />
+    <ClInclude Include="DayCounter.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="ManageWin.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="save_and_load.h" />
