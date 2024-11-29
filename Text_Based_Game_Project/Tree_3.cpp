@@ -22,22 +22,18 @@ void::ManageWindow::Leave_Cell_Option()
 
 	if (choice == 1)
 	{
-		//random_enemie_chance();
 		PrisonYardOption();
 	}
 	else if (choice == 2)
 	{
-		//random_enemie_chance();
 		CanteenOption();
 	}
 	else if (choice == 3)
 	{
-		//random_enemie_chance();
 		BathroomOption();
 	}
 	else if (choice == 4)
 	{
-		//random_enemie_chance();
 		SecuirityHoldingOption();
 	}
 	else {
@@ -84,6 +80,7 @@ void ManageWindow::Wait()
 {
 	cout << "... " << '\n';
 	increment();
+	IntroGameLoop();
 }
 
 void ManageWindow::Dont_Stay()
@@ -95,15 +92,61 @@ void ManageWindow::Dont_Stay()
 void ManageWindow::PrisonYardOption()
 
 {
+
+	// Random chance to encounter an enemy
+	if (rand() % 100 < 30) { // 30% chance
+		fight(); // Call the enemy encounter function
+	}
 	cout << "The yard is wide open, but you feel the watchful eyes of guards on you.\n";
 	cout << "Maybe there's a way to escape from here...\n";
+
+	int choice;
+	cout << "1 Climb fence " << '\n';
+	cout << "2 leave " << '\n';
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		Climb_Fence();
+	}
+	else if (choice == 2)
+	{
+		Dont_Stay();
+	}
+	else {
+		isRunning = false;
+	}
 
 }
 
 void ManageWindow::CanteenOption()
 {
-	cout << "You enter the canteen. The smell of food isn't great, but it’s better than nothing.\n";
+
+	// Random chance to encounter an enemy
+	if (rand() % 100 < 30) { // 30% chance
+		fight(); // Call the enemy encounter function
+	}
+	cout << "You enter the canteen. The smell of food isn't great, but itï¿½s better than nothing.\n";
 	cout << "You notice a suspicious prisoner trading items in the corner.\n";
+	cout << "The yard is wide open, but you feel the watchful eyes of guards on you.\n";
+	cout << "Maybe there's a way to escape from here...\n";
+
+	int choice;
+	cout << "1 turn_off_radio " << '\n';
+	cout << "2 leave " << '\n';
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		turn_off_radio();
+	}
+	else if (choice == 2)
+	{
+		IntroGameLoop();
+	}
+	else {
+		isRunning = false;
+	}
 
 }
 
@@ -123,22 +166,52 @@ void ManageWindow::BathroomOption()
 		cout << "You found nothing.\n";
 	}
 
+	if (rand() % 100 < 50) { // 50% chance
+		if (!playerInventory.hasItem("Knife")) {
+			cout << "You found a Knife on the floor!\n";
+			playerInventory.addItem("Knife");
+		}
+		else {
+			cout << "You found nothing new here.\n";
+		}
+	}
+	else {
+		cout << "You found nothing.\n";
+	}
+
 	// Random chance to encounter an enemy
 	if (rand() % 100 < 30) { // 30% chance
-		Random_Enemy(); // Call the enemy encounter function
+		fight(); // Call the enemy encounter function
 	}
 }
 
 void ManageWindow::SecuirityHoldingOption()
 {
+
+	// Random chance to encounter an enemy
+	if (rand() % 100 < 30) { // 30% chance
+		fight(); // Call the enemy encounter function
+	}
 	cout << "You enter the security holding area.\n";
 
-	// Random chance for an enemy encounter
-	if (rand() % 100 < 30) { // 30% chance
-		Random_Enemy();
+	int choice;
+	cout << "1 fight guards " << '\n';
+	cout << "2 leave " << '\n';
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		fight();
+		fight();
+		fight();
+		serveSentence();
+	}
+	else if (choice == 2)
+	{
+		IntroGameLoop();
 	}
 	else {
-		cout << "You manage to move quietly without being spotted.\n";
+		isRunning = false;
 	}
 }
 
@@ -147,7 +220,7 @@ void ManageWindow::Rest_Option()
 	cout << "You lay down on your uncomfortable prison bed and try to rest.\n";
 	cout << "After some time, you feel slightly better, though still stuck here.\n";
 	increment(); // Assuming this increments days
-
+	IntroGameLoop();
 
 }
 
@@ -158,17 +231,12 @@ void ManageWindow::serveSentence()
 	cout << "It's a bittersweet ending, but at least you survived.\n";
 }
 
-void ManageWindow::Random_Enemie()
-{
-
-}
-
 void ManageWindow::Climb_Fence()
 {
 	if (playerInventory.hasItem("Rope")) {
 		cout << "You tie the rope to the fence and start climbing...\n";
 		cout << "You manage to get over the fence and escape! Freedom at last!\n";
-		cout << "Congratulations, you’ve won!\n";
+		cout << "Congratulations, youï¿½ve escaped!\n";
 	}
 	else {
 		cout << "You need a rope to climb the fence. Maybe you can craft one?\n";
@@ -188,11 +256,31 @@ void ManageWindow::FileBars()
 }
 void ManageWindow::CraftRope()
 {
-	if (playerInventory.hasItem("Bedsheet")) {
+	if (playerInventory.hasItem("Knife")) {
 		cout << "You twist and knot the bedsheets into a makeshift rope.\n";
 		playerInventory.addItem("Rope");
+		IntroGameLoop();
 	}
 	else {
 		cout << "You need bedsheets to craft a rope. Check the cell or other areas.\n";
+		IntroGameLoop();
 	}
+
+}
+
+void ManageWindow::turn_off_radio()
+{
+	if (rand() % 100 < 50) { // 50% chance
+		if (!playerInventory.hasItem("file")) {
+			cout << "thx hers a file!\n";
+			playerInventory.addItem("file");
+		}
+		else {
+			cout << "You found nothing new here.\n";
+		}
+	}
+	else {
+		fight();
+	}
+
 }
