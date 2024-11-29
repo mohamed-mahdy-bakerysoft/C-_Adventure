@@ -1,17 +1,23 @@
 ﻿  DayCounter.cpp
-C:\Users\Mike\source\C-_Adventure\Text_Based_Game_Project\ManageWin.h(6,20): error C2011: 'ManageWindow': 'class' type redefinition
+C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\ManageWin.h(6,7): error C2011: 'ManageWindow': 'class' type redefinition
   (compiling source file 'DayCounter.cpp')
-  C:\Users\Mike\source\C-_Adventure\Text_Based_Game_Project\Tree_3.h(6,7):
-  see declaration of 'ManageWindow'
+      C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\Tree_3.h(6,7):
+      see declaration of 'ManageWindow'
   
-C:\Users\Mike\source\C-_Adventure\Text_Based_Game_Project\DayCounter.cpp(7,14): error C2079: 'Mw' uses undefined class 'ManageWindow'
+C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\DayCounter.cpp(7,14): error C2079: 'Mw' uses undefined class 'ManageWindow'
+  Inventory.cpp
   Tree 1.cpp
-C:\Users\Mike\source\C-_Adventure\Text_Based_Game_Project\ChanceManager.h(16,23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\ChanceManager.h(16,23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'Tree%201.cpp')
   
+  Main.cpp
+  Managewin.cpp
+  Player.cpp
   SaveAndLoadcpp.cpp
 /SaveAndLoadcpp.cpp(1,1): error C1083: Cannot open source file: 'SaveAndLoadcpp.cpp': No such file or directory
   (compiling source file '/SaveAndLoadcpp.cpp')
   
+  Tree 2.cpp
+  Tree_3.cpp
   Generating Code...
-C:\Users\Mike\source\C-_Adventure\Text_Based_Game_Project\Tree 1.cpp(122,1): error C4700: uninitialized local variable 'choice' used
+C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\Tree 1.cpp(122,1): error C4700: uninitialized local variable 'choice' used
