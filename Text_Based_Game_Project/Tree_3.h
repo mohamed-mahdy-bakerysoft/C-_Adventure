@@ -16,9 +16,9 @@ public:
     void Rest_Option();
     void Climb_Fence();
     void serveSentence();
-    void Random_Enemie();
     void FileBars();
     void CraftRope();
+    void turn_off_radio();
 };
 
 #endif // TREE_3_H
