@@ -108,7 +108,7 @@ void ManageWindow::PrisonerAmbush()
 
 void ManageWindow::PrisonYardOption() {
 	bool isRunning = true;
-	int choice;
+	int choice=0;
 
 	cout << "This place is very dangerous. I ought to be careful.\n";
 

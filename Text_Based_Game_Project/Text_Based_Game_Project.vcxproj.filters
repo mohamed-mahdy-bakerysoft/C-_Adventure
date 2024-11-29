@@ -21,9 +21,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SaveAndLoadcpp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Managewin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -47,9 +44,6 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="save_and_load.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ManageWin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,9 +57,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DayCounter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tree_3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

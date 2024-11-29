@@ -1,23 +1,6 @@
 ﻿  DayCounter.cpp
-C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\ManageWin.h(6,7): error C2011: 'ManageWindow': 'class' type redefinition
-  (compiling source file 'DayCounter.cpp')
-      C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\Tree_3.h(6,7):
-      see declaration of 'ManageWindow'
-  
-C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\DayCounter.cpp(7,14): error C2079: 'Mw' uses undefined class 'ManageWindow'
-  Inventory.cpp
-  Tree 1.cpp
-C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\ChanceManager.h(16,23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Tree%201.cpp')
-  
-  Main.cpp
-  Managewin.cpp
-  Player.cpp
-  SaveAndLoadcpp.cpp
-/SaveAndLoadcpp.cpp(1,1): error C1083: Cannot open source file: 'SaveAndLoadcpp.cpp': No such file or directory
-  (compiling source file '/SaveAndLoadcpp.cpp')
-  
-  Tree 2.cpp
-  Tree_3.cpp
-  Generating Code...
-C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\Tree 1.cpp(122,1): error C4700: uninitialized local variable 'choice' used
+Tree 2.obj : error LNK2005: "class Player player" (?player@@3VPlayer@@A) already defined in Tree 1.obj
+DayCounter.obj : error LNK2019: unresolved external symbol "public: void __cdecl ManageWindow::Stay_In_Cell_Option(void)" (?Stay_In_Cell_Option@ManageWindow@@QEAAXXZ) referenced in function "public: void __cdecl DayCounter::increment(void)" (?increment@DayCounter@@QEAAXXZ)
+Managewin.obj : error LNK2001: unresolved external symbol "public: void __cdecl ManageWindow::Stay_In_Cell_Option(void)" (?Stay_In_Cell_Option@ManageWindow@@QEAAXXZ)
+DayCounter.obj : error LNK2019: unresolved external symbol "public: void __cdecl ManageWindow::serveSentence(void)" (?serveSentence@ManageWindow@@QEAAXXZ) referenced in function "public: void __cdecl DayCounter::increment(void)" (?increment@DayCounter@@QEAAXXZ)
+C:\Users\padra\source\repos\C-_Adventure\Text_Based_Game_Project\x64\Debug\Text_Based_Game_Project.exe : fatal error LNK1120: 2 unresolved externals
