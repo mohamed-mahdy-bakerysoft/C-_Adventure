@@ -25,7 +25,6 @@ public:
 	void Rest_Option();
 
 	//General stuff
-	void Random_Enemie();
 
 	void increment();
 
@@ -70,6 +69,8 @@ public:
 	void LeaveCanteen();
 
 	void PrisonerAmbush();
+
+	void turn_off_radio();
 
 
 };
