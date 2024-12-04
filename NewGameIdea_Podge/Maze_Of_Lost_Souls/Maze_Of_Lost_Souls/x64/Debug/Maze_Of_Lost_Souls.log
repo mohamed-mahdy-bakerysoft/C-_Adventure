@@ -1,6 +1,4 @@
 ﻿  Main.cpp
-  Map.cpp
-C:\Users\padra\Desktop\C++\Text Based Game\NewGameIdea_Podge\Maze_Of_Lost_Souls\Maze_Of_Lost_Souls\Map.cpp(35,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Player.cpp
   Generating Code...
-  Maze_Of_Lost_Souls.vcxproj -> C:\Users\padra\Desktop\C++\Text Based Game\NewGameIdea_Podge\Maze_Of_Lost_Souls\x64\Debug\Maze_Of_Lost_Souls.exe
+  Maze_Of_Lost_Souls.vcxproj -> C:\Users\padra\source\repos\C-_Adventure\NewGameIdea_Podge\Maze_Of_Lost_Souls\x64\Debug\Maze_Of_Lost_Souls.exe
