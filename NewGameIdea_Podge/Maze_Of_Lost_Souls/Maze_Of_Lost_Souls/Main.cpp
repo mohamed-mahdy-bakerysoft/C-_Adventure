@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <fstream> // For save/load functionality
 #include <conio.h> // For _getch()
 
 #include "Map.h"
@@ -16,12 +17,55 @@ void displayMainMenu()
 {
     std::cout << "============================================" << std::endl;
     std::cout << "       WELCOME TO THE MAZE OF LOST SOULS    " << std::endl;
-    std::cout << "     _______________________  " << std::endl;
-    std::cout << "   |   ADVENTURE GAME        | " << std::endl;
+    std::cout << "   ==========================================" << std::endl;
     std::cout << "   |  [1] Start Game         | " << std::endl;
     std::cout << "   |  [2] Load Game          | " << std::endl;
     std::cout << "   |  [3] Quit               | " << std::endl;
     std::cout << "   ==========================================" << std::endl;
+}
+
+// Save the player's state
+void saveGame(const Player& player)
+{
+    std::ofstream saveFile("savegame.txt");
+    saveFile << player.getName() << " " << player.getHealth() << " " << player.getXP() << " "
+        << player.getPosition().getX() << " " << player.getPosition().getY() << "\n";
+    for (const auto& item : player.getInventory())
+    {
+        saveFile << item->getName() << "\n";
+    }
+    saveFile.close();
+    std::cout << "Game saved!" << std::endl;
+}
+
+// Load the player's state
+void loadGame(Player& player, Map& gameMap)
+{
+    std::ifstream loadFile("savegame.txt");
+    if (!loadFile.is_open())
+    {
+        std::cout << "No save file found. Starting new game." << std::endl;
+        return;
+    }
+    std::string playerName;
+    int health, xp, x, y;
+    loadFile >> playerName >> health >> xp >> x >> y;
+    player = Player(playerName, health, 10); // Assume default attack power
+    player.setPosition(x, y);
+    player.gainXP(xp);
+    std::string itemName;
+    while (loadFile >> itemName)
+    {
+        auto item = std::find_if(Item::getItemPool().begin(), Item::getItemPool().end(),
+            [&](std::shared_ptr<Item> i) { return i->getName() == itemName; });
+        if (item != Item::getItemPool().end())
+        {
+            player.collectItem(*item);
+        }
+    }
+    loadFile.close();
+    gameMap.setTile(x, y, 'P');
+    std::cout << "Game loaded!" << std::endl;
 }
 
 int main()
@@ -39,9 +83,8 @@ int main()
     {
         menuChoice = _getch();
 
-        if (menuChoice == '1')
+        if (menuChoice == '1') // Start new game
         {
-            // Ask the player for their name
             std::cout << "Enter your player name: ";
             std::getline(std::cin, playerName);
 
@@ -51,8 +94,8 @@ int main()
             }
 
             Player player(playerName, 100, 10); // Create player
-            Map gameMap(10, 10); // Create a map of size 10x10
-            gameMap.generateMaze(); // Generate a maze
+            Map gameMap(10, 10);               // Create a map of size 10x10
+            gameMap.generateMaze();           // Generate a maze
 
             bool inventoryVisible = false; // Inventory is not shown initially
 
@@ -63,7 +106,8 @@ int main()
                 gameMap.printMap(); // Display the map
 
                 // Print the player's status
-                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth() << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
+                    << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
 
                 // If the inventory is visible, show it
                 if (inventoryVisible)
@@ -84,11 +128,25 @@ int main()
                 else if (input == ' ')
                 {
                     // Attempt to pick up an item if standing on one
-                    if (gameMap.isItem(player.getPosition().getX(), player.getPosition().getY()))
+                    int x = player.getPosition().getX();
+                    int y = player.getPosition().getY();
+                    if (gameMap.isItem(x, y))
                     {
-                        std::shared_ptr<Item> item = std::make_shared<Item>("Healing Potion", "Restores 50 health.", 50, 0); // You may want to handle item reference properly
-                        player.collectItem(item); // Collect item
+                        auto item = gameMap.getItem(x, y); // Fetch the actual item from the map
+                        if (item)
+                        {
+                            player.collectItem(item);
+                            gameMap.setTile(x, y, ' '); // Remove the item from the map
+                        }
                     }
+                }
+                else if (input == 's') // Save the game
+                {
+                    saveGame(player);
+                }
+                else if (input == 'd') // Try to open a door
+                {
+                    player.openDoor();
                 }
                 else
                 {
@@ -97,15 +155,54 @@ int main()
             }
             break; // Exit main menu loop
         }
-        else if (menuChoice == '2')
+        else if (menuChoice == '2') // Load game
         {
-            std::cout << "Load Game functionality is not implemented yet." << std::endl;
-            break; // Exit if load game is chosen
+            Player player("Hero", 100, 10); // Default values; overwritten by loadGame
+            Map gameMap(10, 10);           // Create a map of size 10x10
+            gameMap.generateMaze();       // Generate a maze
+            loadGame(player, gameMap);
+
+            // Proceed to game loop after loading
+            char input;
+            while (true)
+            {
+                system("cls");
+                gameMap.printMap();
+
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
+                    << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+
+                input = _getch();
+                if (input == 'q')
+                {
+                    break;
+                }
+                else if (input == ' ')
+                {
+                    // Attempt to pick up an item if standing on one
+                    int x = player.getPosition().getX();
+                    int y = player.getPosition().getY();
+                    if (gameMap.isItem(x, y))
+                    {
+                        auto item = gameMap.getItem(x, y); // Fetch the actual item from the map
+                        if (item)
+                        {
+                            player.collectItem(item);
+                            gameMap.setTile(x, y, ' ');
+                        }
+                    }
+                }
+                else
+                {
+                    player.move(input, gameMap); // Move player
+                }
+            }
+            break;
         }
-        else if (menuChoice == '3')
+        else if (menuChoice == '3') // Quit
         {
             std::cout << "Exiting game. Goodbye!" << std::endl;
-            break; // Exit if quit is chosen
+            break;
         }
         else
         {

@@ -30,7 +30,6 @@ void Item::initializeItemPool()
     addItemToPool(std::make_shared<Item>("Mana Potion", "Restores 30 mana.", 0, 0, true));
     addItemToPool(std::make_shared<Item>("Shield", "Increases defense by 10.", 0, 0, false));
     addItemToPool(std::make_shared<Item>("Magic Sword", "Increases attack by 50.", 0, 50, false));
-    // Add the key as an item
     addItemToPool(std::make_shared<Item>("Key", "A key to open locked doors.", 0, 0, false));  // Key is not consumable
 }
 

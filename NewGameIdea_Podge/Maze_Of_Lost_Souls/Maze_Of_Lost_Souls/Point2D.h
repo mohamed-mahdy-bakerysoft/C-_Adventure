@@ -25,4 +25,10 @@ public:
     {
         _y = y;
     }
+
+    // Overload the < operator for use in std::map
+    bool operator<(const Point2D& other) const
+    {
+        return (_x < other._x) || (_x == other._x && _y < other._y);
+    }
 };
