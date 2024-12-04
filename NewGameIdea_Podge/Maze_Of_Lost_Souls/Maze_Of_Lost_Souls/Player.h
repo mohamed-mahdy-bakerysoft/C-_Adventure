@@ -3,6 +3,7 @@
 #include <vector>
 #include "Point2D.h"
 #include "Map.h"
+#include "Item.h"
 
 class Player
 {
@@ -13,19 +14,21 @@ private:
     int _xp;
     Point2D _position;
     bool _hasKey;
-    std::vector<std::string> _inventory;  // Inventory to store item names
+    std::vector<Item*> _inventory;
 
 public:
     Player(std::string name, int health, int attack);
 
-    void move(char direction, Map& gameMap);  // Move player and interact with the map
-    void collectItem(const std::string& itemName);  // Collect item and add it to inventory
-    void openDoor();  // Try to open a door
-    void gainXP(int xp);  // Gain experience points
-    void showInventory();  // Display the inventory
+    void move(char direction, Map& gameMap);
+    void collectItem(Item* item);
+    void openDoor();
+    void gainXP(int xp);
+    void showInventory();
 
     std::string getName() { return _name; }
     int getHealth() { return _health; }
+    int getXP() { return _xp; } // Getter for XP
+    int getLevel() const; // Method to calculate level based on XP
     Point2D getPosition() { return _position; }
     void setHasKey(bool hasKey) { _hasKey = hasKey; }
 };
