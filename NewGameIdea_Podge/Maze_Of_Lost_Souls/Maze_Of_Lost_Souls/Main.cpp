@@ -97,13 +97,13 @@ int main()
             Map gameMap(10, 10);               // Create a map of size 10x10
             gameMap.generateMaze();           // Generate a maze
 
-            bool inventoryVisible = false; // Inventory is not shown initially
+            bool inventoryVisible = false;    // Initialize inventory visibility toggle
 
             char input;
             while (true)
             {
-                system("cls"); // Clear screen
-                gameMap.printMap(); // Display the map
+                system("cls");                // Clear screen
+                gameMap.printMap();           // Display the map
 
                 // Print the player's status
                 std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
@@ -121,10 +121,6 @@ int main()
                 {
                     break; // Exit the game loop
                 }
-                else if (input == 'i')
-                {
-                    inventoryVisible = !inventoryVisible; // Toggle inventory visibility
-                }
                 else if (input == ' ')
                 {
                     // Attempt to pick up an item if standing on one
@@ -140,13 +136,13 @@ int main()
                         }
                     }
                 }
-                else if (input == 's') // Save the game
+                else if (input == 'i')
                 {
-                    saveGame(player);
-                }
-                else if (input == 'd') // Try to open a door
-                {
-                    player.openDoor();
+                    inventoryVisible = !inventoryVisible; // Toggle inventory visibility
+                    if (inventoryVisible)
+                    {
+                        player.showInventory();
+                    }
                 }
                 else
                 {
@@ -159,10 +155,9 @@ int main()
         {
             Player player("Hero", 100, 10); // Default values; overwritten by loadGame
             Map gameMap(10, 10);           // Create a map of size 10x10
-            gameMap.generateMaze();       // Generate a maze
+            gameMap.generateMaze();        // Generate a maze
             loadGame(player, gameMap);
 
-            // Proceed to game loop after loading
             char input;
             while (true)
             {
@@ -179,7 +174,6 @@ int main()
                 }
                 else if (input == ' ')
                 {
-                    // Attempt to pick up an item if standing on one
                     int x = player.getPosition().getX();
                     int y = player.getPosition().getY();
                     if (gameMap.isItem(x, y))
@@ -188,7 +182,7 @@ int main()
                         if (item)
                         {
                             player.collectItem(item);
-                            gameMap.setTile(x, y, ' ');
+                            gameMap.setTile(x, y, ' '); // Remove the item from the map
                         }
                     }
                 }

@@ -89,13 +89,14 @@ void Map::placeItemsOnMap()
         }
     }
 
-    // Add additional random items
-    for (int i = 0; i < 5; ++i) // Adjust the number of items as needed
+    // Add additional items
+    int additionalItems = 5;
+    for (int i = 0; i < additionalItems; ++i)
     {
         int x = rand() % _width;
         int y = rand() % _height;
 
-        if (_map[y][x] == ' ') // Only place on empty tiles
+        if (_map[y][x] == ' ')
         {
             auto randomItem = Item::getItemPool()[rand() % Item::getItemPool().size()];
             setTile(x, y, randomItem->getName()[0]);
@@ -103,6 +104,7 @@ void Map::placeItemsOnMap()
         }
     }
 }
+
 
 
 void Map::generateMaze()
