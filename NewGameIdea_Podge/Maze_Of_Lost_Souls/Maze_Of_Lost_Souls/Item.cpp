@@ -1,34 +1,43 @@
 #include "Item.h"
 #include <iostream>
+#include <memory>
 
-// Constructor sets item properties
+std::vector<std::shared_ptr<Item>> Item::_itemPool;  // Static pool of items
+
+// Constructor to initialize item properties
 Item::Item(std::string name, std::string description, int healthBoost, int attackBoost, bool isConsumable)
     : _name(name), _description(description), _healthBoost(healthBoost), _attackBoost(attackBoost), _isConsumable(isConsumable)
 {
 }
 
-// Get the item's name
+// Static method to return the item pool
+std::vector<std::shared_ptr<Item>> Item::getItemPool()
+{
+    return _itemPool;
+}
+
+// Static method to add an item to the pool
+void Item::addItemToPool(std::shared_ptr<Item> item)
+{
+    _itemPool.push_back(item);
+}
+
+// Initialize the item pool with some default items
+void Item::initializeItemPool()
+{
+    addItemToPool(std::make_shared<Item>("Healing Potion", "Restores 50 health.", 50, 0, true));
+    addItemToPool(std::make_shared<Item>("Strength Potion", "Increases attack by 20.", 0, 20, true));
+    addItemToPool(std::make_shared<Item>("Mana Potion", "Restores 30 mana.", 0, 0, true));
+    addItemToPool(std::make_shared<Item>("Shield", "Increases defense by 10.", 0, 0, false));
+    addItemToPool(std::make_shared<Item>("Magic Sword", "Increases attack by 50.", 0, 50, false));
+    // Add the key as an item
+    addItemToPool(std::make_shared<Item>("Key", "A key to open locked doors.", 0, 0, false));  // Key is not consumable
+}
+
+// Get the name of the item
 std::string Item::getName() const
 {
     return _name;
-}
-
-// Get the item's description
-std::string Item::getDescription() const
-{
-    return _description;
-}
-
-// Get the health boost value of the item
-int Item::getHealthBoost() const
-{
-    return _healthBoost;
-}
-
-// Get the attack boost value of the item
-int Item::getAttackBoost() const
-{
-    return _attackBoost;
 }
 
 // Check if the item is consumable
@@ -37,7 +46,7 @@ bool Item::isConsumable() const
     return _isConsumable;
 }
 
-// Use the item, applying boosts
+// Use the item (e.g., applying health or attack boosts)
 void Item::useItem()
 {
     if (_healthBoost > 0)
@@ -50,7 +59,7 @@ void Item::useItem()
     }
 }
 
-// Print the details of the item
+// Print the item details
 void Item::printDetails() const
 {
     std::cout << "Item: " << _name << std::endl;

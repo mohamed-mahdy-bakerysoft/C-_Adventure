@@ -1,8 +1,6 @@
 #pragma once
 #include <vector>
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <memory>
 #include "Item.h"
 
 class Map
@@ -19,6 +17,7 @@ public:
     bool isWalkable(int x, int y);
     void generateMaze();
     char getTile(int x, int y);
-    bool isDoor(int x, int y);
     bool isItem(int x, int y);
+    bool isDoor(int x, int y);
+    void placeItemsOnMap();
 };

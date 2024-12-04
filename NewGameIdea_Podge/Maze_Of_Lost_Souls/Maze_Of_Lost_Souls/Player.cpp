@@ -17,36 +17,45 @@ void Player::move(char direction, Map& gameMap)
     // Move based on direction
     switch (direction)
     {
-    case 'w': newY--; break;
-    case 's': newY++; break;
-    case 'a': newX--; break;
-    case 'd': newX++; break;
+    case 'w': newY--; break;  // Move up
+    case 's': newY++; break;  // Move down
+    case 'a': newX--; break;  // Move left
+    case 'd': newX++; break;  // Move right
     }
 
     // If the new position is walkable, move the player
     if (gameMap.isWalkable(newX, newY))
     {
-        gameMap.setTile(_position.getX(), _position.getY(), ' '); // Clear old position
+        // Clear the old position on the map
+        gameMap.setTile(_position.getX(), _position.getY(), ' ');
+
+        // Update player's position
         _position.setX(newX);
         _position.setY(newY);
-        gameMap.setTile(newX, newY, 'P'); // Place player at new position
+
+        // Set the new position with 'P' (player)
+        gameMap.setTile(newX, newY, 'P');
 
         // Check for items or doors at the new position
         if (gameMap.isItem(newX, newY))
         {
-            Item* item = new Item("Healing Potion", "Restores 50 health.", 50, 0);
-            collectItem(item); // Collect item
-            gameMap.setTile(newX, newY, ' '); // Remove item from map
+            // If the spacebar is pressed, collect the item
+            std::cout << "Press SPACE to pick up the item." << std::endl;
         }
         else if (gameMap.isDoor(newX, newY))
         {
             openDoor(); // Open door if applicable
         }
+        else if (gameMap.getTile(newX, newY) == 'K')  // If the tile is a key
+        {
+            std::cout << "You found a key!" << std::endl;
+            gameMap.setTile(newX, newY, ' '); // Remove key from the map after collection
+        }
     }
 }
 
 // Collect an item and show its details
-void Player::collectItem(Item* item)
+void Player::collectItem(std::shared_ptr<Item> item)
 {
     std::cout << "You found a " << item->getName() << "!" << std::endl;
     item->printDetails(); // Show item details
@@ -107,5 +116,9 @@ void Player::showInventory()
 // Calculate the player's level based on XP
 int Player::getLevel() const
 {
-    return _xp / 100; // Example: level up every 100 XP
+    if (_xp == 0)
+    {
+        return 0; // Return level 0 if XP is 0 to avoid division by zero
+    }
+    return _xp / 100; // Level up every 100 XP
 }

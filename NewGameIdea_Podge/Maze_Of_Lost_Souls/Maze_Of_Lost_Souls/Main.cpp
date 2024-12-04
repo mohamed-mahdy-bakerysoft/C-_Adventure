@@ -1,9 +1,15 @@
 #include <iostream>
 #include <string>
+#include <memory>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <conio.h> // For _getch()
+
 #include "Map.h"
 #include "Player.h"
 #include "Point2D.h"
-#include <conio.h>
+#include "Item.h"
 
 // This function shows the main menu of the game
 void displayMainMenu()
@@ -20,6 +26,9 @@ void displayMainMenu()
 
 int main()
 {
+    // Initialize the item pool with default items
+    Item::initializeItemPool();
+
     std::string playerName;
     char menuChoice;
 
@@ -41,7 +50,7 @@ int main()
                 playerName = "Hero"; // Default name if no input
             }
 
-            Player player(playerName, 100, 10);
+            Player player(playerName, 100, 10); // Create player
             Map gameMap(10, 10); // Create a map of size 10x10
             gameMap.generateMaze(); // Generate a maze
 
@@ -53,7 +62,7 @@ int main()
                 system("cls"); // Clear screen
                 gameMap.printMap(); // Display the map
 
-                // Print the player's status: name, health, XP, and level
+                // Print the player's status
                 std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth() << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
 
                 // If the inventory is visible, show it
@@ -71,6 +80,15 @@ int main()
                 else if (input == 'i')
                 {
                     inventoryVisible = !inventoryVisible; // Toggle inventory visibility
+                }
+                else if (input == ' ')
+                {
+                    // Attempt to pick up an item if standing on one
+                    if (gameMap.isItem(player.getPosition().getX(), player.getPosition().getY()))
+                    {
+                        std::shared_ptr<Item> item = std::make_shared<Item>("Healing Potion", "Restores 50 health.", 50, 0); // You may want to handle item reference properly
+                        player.collectItem(item); // Collect item
+                    }
                 }
                 else
                 {

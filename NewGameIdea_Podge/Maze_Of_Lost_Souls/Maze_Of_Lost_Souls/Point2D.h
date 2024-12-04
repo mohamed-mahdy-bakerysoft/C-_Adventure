@@ -6,10 +6,7 @@ private:
     int _x, _y;
 
 public:
-    Point2D(int x = 0, int y = 0) : _x(x), _y(y)
-    {
-
-    }
+    Point2D(int x = 0, int y = 0) : _x(x), _y(y) {}
 
     int getX() const
     {
