@@ -28,10 +28,25 @@ public:
     int getLevel() const;
     std::vector<std::shared_ptr<Item>> getInventory() const;
     void setPosition(int x, int y);
-    void setHasKey(bool hasKey) { _hasKey = hasKey; }
+    void setHasKey(bool hasKey)
+    {
+        _hasKey = hasKey;
+    }
 
-    std::string getName() const { return _name; }
-    int getHealth() const { return _health; }
-    int getXP() const { return _xp; }
-    Point2D getPosition() const { return _position; }
+    std::string getName() const
+    {
+        return _name;
+    }
+    int getHealth() const
+    {
+        return _health;
+    }
+    int getXP() const
+    {
+        return _xp;
+    }
+    Point2D getPosition() const
+    {
+        return _position;
+    }
 };
