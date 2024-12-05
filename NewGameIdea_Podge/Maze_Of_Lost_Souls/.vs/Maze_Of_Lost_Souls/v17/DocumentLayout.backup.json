@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Maze_Of_Lost_Souls\\Main.cpp",
               "ToolTip": "C:\\Users\\padra\\source\\repos\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Main.cpp",
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Main.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAALcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-04T12:00:35.747Z",
               "IsPinned": true,
@@ -68,8 +68,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Point2D.h",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T14:02:29.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T14:02:29.595Z"
             },
             {
               "$type": "Document",
@@ -81,8 +80,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Item.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T12:48:58.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:48:58.53Z"
             },
             {
               "$type": "Document",
@@ -94,8 +92,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Item.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T12:48:46.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:48:46.308Z"
             },
             {
               "$type": "Document",
@@ -107,8 +104,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Map.cpp",
               "ViewState": "AgIAAF0AAAAAAAAAAAAAAGoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T12:11:57.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:11:57.706Z"
             },
             {
               "$type": "Document",
@@ -120,8 +116,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Map.h",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T12:11:39.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:11:39.563Z"
             },
             {
               "$type": "Document",
@@ -133,8 +128,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Player.cpp",
               "ViewState": "AgIAAGwAAAAAAAAAAAAAAGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T12:00:19.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:00:19.817Z"
             },
             {
               "$type": "Document",
@@ -146,8 +140,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Player.h",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T11:59:42.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T11:59:42.137Z"
             }
           ]
         }

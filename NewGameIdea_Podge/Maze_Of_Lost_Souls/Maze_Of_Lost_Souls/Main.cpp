@@ -44,29 +44,42 @@ void saveGame(const Player& player)
 void loadGame(Player& player, Map& gameMap)
 {
     std::ifstream loadFile("savegame.txt");
+
+    // Check if the save file exists and is accessible
     if (!loadFile.is_open())
     {
-        std::cout << "No save file found. Starting new game." << std::endl;
+        std::cout << "No save file found. Starting a new game." << std::endl;
         return;
     }
 
     std::string playerName;
     int health, xp, x, y;
-    loadFile >> playerName >> health >> xp >> x >> y;
 
+    // Read the player's basic attributes
+    if (!(loadFile >> playerName >> health >> xp >> x >> y))
+    {
+        std::cerr << "Error reading player data from save file. Starting a new game." << std::endl;
+        return;
+    }
+
+    // Initialize the player with the loaded data
     player = Player(playerName, health, 10); // Assume default attack power
     player.setPosition(x, y);
     player.gainXP(xp);
 
+    // Clear and rebuild the player's inventory
     std::string itemName;
     while (loadFile >> itemName)
-    {
+{
         player.collectItem(Item(itemName, "Restored item from save"));
     }
-    loadFile.close();
+
+    // Update the map to reflect the player's loaded position
     gameMap.setTile(x, y, 'P');
-    std::cout << "Game loaded!" << std::endl;
+
+    std::cout << "Game successfully loaded!" << std::endl;
 }
+
 
 int main()
 {
