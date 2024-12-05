@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <memory>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -30,10 +29,13 @@ void saveGame(const Player& player)
     std::ofstream saveFile("savegame.txt");
     saveFile << player.getName() << " " << player.getHealth() << " " << player.getXP() << " "
         << player.getPosition().getX() << " " << player.getPosition().getY() << "\n";
+
+    // Use the public getInventory() method
     for (const auto& item : player.getInventory())
     {
-        saveFile << item->getName() << "\n";
+        saveFile << item.getName() << "\n";
     }
+
     saveFile.close();
     std::cout << "Game saved!" << std::endl;
 }
@@ -47,21 +49,19 @@ void loadGame(Player& player, Map& gameMap)
         std::cout << "No save file found. Starting new game." << std::endl;
         return;
     }
+
     std::string playerName;
     int health, xp, x, y;
     loadFile >> playerName >> health >> xp >> x >> y;
+
     player = Player(playerName, health, 10); // Assume default attack power
     player.setPosition(x, y);
     player.gainXP(xp);
+
     std::string itemName;
     while (loadFile >> itemName)
     {
-        auto item = std::find_if(Item::getItemPool().begin(), Item::getItemPool().end(),
-            [&](std::shared_ptr<Item> i) { return i->getName() == itemName; });
-        if (item != Item::getItemPool().end())
-        {
-            player.collectItem(*item);
-        }
+        player.collectItem(Item(itemName, "Restored item from save"));
     }
     loadFile.close();
     gameMap.setTile(x, y, 'P');
@@ -70,9 +70,6 @@ void loadGame(Player& player, Map& gameMap)
 
 int main()
 {
-    // Initialize the item pool with default items
-    Item::initializeItemPool();
-
     std::string playerName;
     char menuChoice;
 
@@ -83,8 +80,8 @@ int main()
     {
         menuChoice = _getch();
 
-        if (menuChoice == '1') // Start new game
-        {
+        if (menuChoice == '1')
+        { // Start new game
             std::cout << "Enter your player name: ";
             std::getline(std::cin, playerName);
 
@@ -97,13 +94,13 @@ int main()
             Map gameMap(10, 10);               // Create a map of size 10x10
             gameMap.generateMaze();           // Generate a maze
 
-            bool inventoryVisible = false;    // Initialize inventory visibility toggle
+            bool inventoryVisible = false; // Initialize inventory visibility toggle
 
             char input;
             while (true)
             {
-                system("cls");                // Clear screen
-                gameMap.printMap();           // Display the map
+                system("cls");          // Clear screen
+                gameMap.printMap();     // Display the map
 
                 // Print the player's status
                 std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
@@ -128,21 +125,14 @@ int main()
                     int y = player.getPosition().getY();
                     if (gameMap.isItem(x, y))
                     {
-                        auto item = gameMap.getItem(x, y); // Fetch the actual item from the map
-                        if (item)
-                        {
-                            player.collectItem(item);
-                            gameMap.setTile(x, y, ' '); // Remove the item from the map
-                        }
+                        Item item = gameMap.getItem(x, y); // Fetch the actual item from the map
+                        player.collectItem(item);
+                        gameMap.setTile(x, y, ' '); // Remove the item from the map
                     }
                 }
                 else if (input == 'i')
                 {
                     inventoryVisible = !inventoryVisible; // Toggle inventory visibility
-                    if (inventoryVisible)
-                    {
-                        player.showInventory();
-                    }
                 }
                 else
                 {
@@ -151,8 +141,8 @@ int main()
             }
             break; // Exit main menu loop
         }
-        else if (menuChoice == '2') // Load game
-        {
+        else if (menuChoice == '2')
+        { // Load game
             Player player("Hero", 100, 10); // Default values; overwritten by loadGame
             Map gameMap(10, 10);           // Create a map of size 10x10
             gameMap.generateMaze();        // Generate a maze
@@ -178,12 +168,9 @@ int main()
                     int y = player.getPosition().getY();
                     if (gameMap.isItem(x, y))
                     {
-                        auto item = gameMap.getItem(x, y); // Fetch the actual item from the map
-                        if (item)
-                        {
-                            player.collectItem(item);
-                            gameMap.setTile(x, y, ' '); // Remove the item from the map
-                        }
+                        Item item = gameMap.getItem(x, y); // Fetch the actual item from the map
+                        player.collectItem(item);
+                        gameMap.setTile(x, y, ' '); // Remove the item from the map
                     }
                 }
                 else
@@ -193,8 +180,8 @@ int main()
             }
             break;
         }
-        else if (menuChoice == '3') // Quit
-        {
+        else if (menuChoice == '3')
+        { // Quit
             std::cout << "Exiting game. Goodbye!" << std::endl;
             break;
         }

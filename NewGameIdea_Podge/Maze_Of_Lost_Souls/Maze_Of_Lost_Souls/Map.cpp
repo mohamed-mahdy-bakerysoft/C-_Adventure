@@ -1,5 +1,4 @@
 #include "Map.h"
-#include "Item.h"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -8,7 +7,7 @@
 Map::Map(int width, int height) : _width(width), _height(height)
 {
     _map.resize(height, std::vector<char>(width, ' '));
-    srand(time(0)); // Initialize random seed
+    srand(time(0));
 }
 
 void Map::setTile(int x, int y, char symbol)
@@ -46,21 +45,16 @@ bool Map::isItem(int x, int y)
     return _itemMap.find({ x, y }) != _itemMap.end();
 }
 
-std::shared_ptr<Item> Map::getItem(int x, int y)
+Item Map::getItem(int x, int y)
 {
     auto it = _itemMap.find({ x, y });
     if (it != _itemMap.end())
     {
-        auto item = it->second;
-        _itemMap.erase(it); // Remove item from map
+        Item item = it->second;
+        _itemMap.erase(it);
         return item;
     }
-    return nullptr;
-}
-
-bool Map::isDoor(int x, int y)
-{
-    return _map[y][x] == 'D'; // Example: Door symbol as 'D'
+    throw std::runtime_error("Item not found.");
 }
 
 void Map::placeItemsOnMap()
@@ -73,39 +67,35 @@ void Map::placeItemsOnMap()
         int x = rand() % _width;
         int y = rand() % _height;
 
-        if (_map[y][x] == ' ') // Only place on empty tiles
+        if (_map[y][x] == ' ')
         {
             if (!keyPlaced)
             {
                 setTile(x, y, 'K');
-                _itemMap[{x, y}] = std::make_shared<Item>("Key", "A key to open locked doors.", 0, 0, false);
+                _itemMap[{x, y}] = Item("Key", "A key to open locked doors.");
                 keyPlaced = true;
             }
             else if (!doorPlaced)
             {
-                setTile(x, y, 'D'); // Place a door
+                setTile(x, y, 'D');
                 doorPlaced = true;
             }
         }
     }
 
     // Add additional items
-    int additionalItems = 5;
-    for (int i = 0; i < additionalItems; ++i)
+    for (int i = 0; i < 5; ++i)
     {
         int x = rand() % _width;
         int y = rand() % _height;
 
         if (_map[y][x] == ' ')
         {
-            auto randomItem = Item::getItemPool()[rand() % Item::getItemPool().size()];
-            setTile(x, y, randomItem->getName()[0]);
-            _itemMap[{x, y}] = randomItem;
+            _itemMap[{x, y}] = Item("Potion", "Restores health.");
+            setTile(x, y, 'P');
         }
     }
 }
-
-
 
 void Map::generateMaze()
 {
@@ -113,13 +103,13 @@ void Map::generateMaze()
     {
         for (int x = 0; x < _width; ++x)
         {
-            if (rand() % 10 < 2) // 20% chance to place a wall
+            if (rand() % 10 < 2)
             {
                 setTile(x, y, '#');
             }
         }
     }
 
-    placeItemsOnMap(); // Place a single door and key
-    setTile(1, 1, 'P'); // Place the player at the starting position
+    placeItemsOnMap();
+    setTile(1, 1, 'P'); // Player starts at (1,1)
 }
