@@ -1,7 +1,5 @@
-podge 100 6 2 2
-Potion
-Key
-Potion
-Potion
-Potion
-Potion
+podge 100 4 9 4
+Potion Restores health.
+Potion Restores health.
+Key A key to open locked doors.
+Potion Restores health.

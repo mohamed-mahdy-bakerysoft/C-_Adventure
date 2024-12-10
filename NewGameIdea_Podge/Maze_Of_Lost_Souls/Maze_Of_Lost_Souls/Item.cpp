@@ -1,7 +1,7 @@
 #include "Item.h"
 #include <iostream>
 
-// Constructor to initialize item properties
+// Constructor to initialize item
 Item::Item(std::string name, std::string description) : name(name), description(description)
 {
 

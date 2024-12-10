@@ -26,12 +26,14 @@ void displayMainMenu()
 void saveGame(const Player& player)
 {
     std::ofstream saveFile("savegame.txt");
-    saveFile << player.getName() << " " << player.getHealth() << " " << player.getXP() << " " << player.getPosition().getX() << " " << player.getPosition().getY() << "\n";
 
-    // Use the public getInventory() method
+    // Save player attributes
+    saveFile << player.getName() << " " << player.getHealth() << " " << player.getXP()<< " " << player.getPosition().getX() << " " << player.getPosition().getY() << "\n";
+
+    // Save inventory items
     for (const auto& item : player.getInventory())
     {
-        saveFile << item.getName() << "\n";
+        saveFile << item.getName() << " " << item.getDescription() << "\n";
     }
 
     saveFile.close();
@@ -43,7 +45,6 @@ void loadGame(Player& player, Map& gameMap)
 {
     std::ifstream loadFile("savegame.txt");
 
-    // Check if the save file exists and is accessible
     if (!loadFile.is_open())
     {
         std::cout << "No save file found. Starting a new game." << std::endl;
@@ -53,28 +54,31 @@ void loadGame(Player& player, Map& gameMap)
     std::string playerName;
     int health, xp, x, y;
 
-    // Read the player's basic attributes
+    // Load player attributes
     if (!(loadFile >> playerName >> health >> xp >> x >> y))
     {
         std::cerr << "Error reading player data from save file. Starting a new game." << std::endl;
         return;
     }
 
-    // Initialize the player with the loaded data
-    player = Player(playerName, health, 10); // Assume default attack power
+    player = Player(playerName, health, 10);
     player.setPosition(x, y);
     player.gainXP(xp);
 
-    // Clear and rebuild the player's inventory
-    std::string itemName;
+    // Clear and rebuild the inventory
+    std::string itemName, itemDescription;
     while (loadFile >> itemName)
     {
-        player.collectItem(Item(itemName, "Restored item from save"));
+        std::getline(loadFile, itemDescription); // show the item's description
+        if (!itemDescription.empty() && itemDescription[0] == ' ')
+        {
+            itemDescription.erase(0, 1); // Remove space from description
+        }
+        player.collectItem(Item(itemName, itemDescription));
     }
 
-    // Update the map to reflect the player's loaded position
-    gameMap.setTile(x, y, 'P');
-
+    // Update the map to reflect the player's position
+    gameMap.setTile(x, y, '*');
     std::cout << "Game successfully loaded!" << std::endl;
 }
 
