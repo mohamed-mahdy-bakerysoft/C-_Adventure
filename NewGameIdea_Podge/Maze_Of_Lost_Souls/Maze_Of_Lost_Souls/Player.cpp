@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include "Map.h"
 
 // Constructor
 Player::Player(std::string name, int health, int attack)
@@ -40,6 +41,16 @@ void Player::collectItem(const Item& item)
     if (item.getName() == "Key")
     {
         _hasKey = true;
+    }
+    //Open nenoor
+    else if (_hasKey == true)
+    {
+        if (item.getName() == "")
+        {
+            //if player has key and tries to pick up the door it generates a new level
+            //implement that shit here
+            
+        }
     }
 }
 

@@ -129,6 +129,7 @@ int main()
 
                 if (input == 'q')
                 {
+                    saveGame;
                     break; // Exit the game loop
                 }
                 else if (input == ' ')
@@ -173,6 +174,7 @@ int main()
                 input = _getch();
                 if (input == 'q')
                 {
+
                     break;
                 }
                 else if (input == ' ')
