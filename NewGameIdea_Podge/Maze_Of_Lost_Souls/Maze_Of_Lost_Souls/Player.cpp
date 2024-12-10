@@ -4,7 +4,7 @@
 
 // Constructor
 Player::Player(std::string name, int health, int attack)
-    : _name(name), _health(health), _attack(attack), _xp(0), _hasKey(false)
+    : name(name), health(health), attack(attack), xp(0), hasKey(false)
 {
 
 }
@@ -12,8 +12,8 @@ Player::Player(std::string name, int health, int attack)
 // Move the player on the map
 void Player::move(char direction, Map& gameMap)
 {
-    int newX = _position.getX();
-    int newY = _position.getY();
+    int newX = position.getX();
+    int newY = position.getY();
 
     switch (direction)
     {
@@ -26,9 +26,9 @@ void Player::move(char direction, Map& gameMap)
 
     if (gameMap.isWalkable(newX, newY))
     {
-        gameMap.setTile(_position.getX(), _position.getY(), ' ');
-        _position.setX(newX);
-        _position.setY(newY);
+        gameMap.setTile(position.getX(), position.getY(), ' ');
+        position.setX(newX);
+        position.setY(newY);
         gameMap.setTile(newX, newY, 'P');
     }
 }
@@ -36,14 +36,14 @@ void Player::move(char direction, Map& gameMap)
 // Add an item to the inventory
 void Player::collectItem(const Item& item)
 {
-    _inventory.push_back(item);
+    inventory.push_back(item);
     gainXP(1);
     if (item.getName() == "Key")
     {
-        _hasKey = true;
+        hasKey = true;
     }
     //Open nenoor
-    else if (_hasKey == true)
+    else if (hasKey == true)
     {
         if (item.getName() == "")
         {
@@ -57,13 +57,13 @@ void Player::collectItem(const Item& item)
 // Display the player's inventory
 void Player::showInventory()
 {
-    if (_inventory.empty())
+    if (inventory.empty())
     {
         std::cout << "Your inventory is empty." << std::endl;
     }
     else
     {
-        for (const auto& item : _inventory)
+        for (const auto& item : inventory)
         {
             std::cout << "- " << item.getName() << std::endl;
         }
@@ -73,48 +73,48 @@ void Player::showInventory()
 // Gain experience points
 void Player::gainXP(int xp)
 {
-    _xp += xp;
+    xp += xp;
 }
 
 // Calculate the player's level
 int Player::getLevel() const
 {
-    return _xp / 100;
+    return xp / 100;
 }
 
 // Set the player's position
 void Player::setPosition(int x, int y)
 {
-    _position.setX(x);
-    _position.setY(y);
+    position.setX(x);
+    position.setY(y);
 }
 
 // Get the player's name
 std::string Player::getName() const
 {
-    return _name;
+    return name;
 }
 
 // Get the player's health
 int Player::getHealth() const
 {
-    return _health;
+    return health;
 }
 
 // Get the player's XP
 int Player::getXP() const
 {
-    return _xp;
+    return xp;
 }
 
 // Get the player's position
 Point2D Player::getPosition() const
 {
-    return _position;
+    return position;
 }
 
 // Access the player's inventory
 const std::vector<Item>& Player::getInventory() const
 {
-    return _inventory;
+    return inventory;
 }

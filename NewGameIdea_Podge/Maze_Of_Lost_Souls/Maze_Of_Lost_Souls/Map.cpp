@@ -42,16 +42,16 @@ char Map::getTile(int x, int y)
 
 bool Map::isItem(int x, int y)
 {
-    return _itemMap.find({ x, y }) != _itemMap.end();
+    return itemMap.find({ x, y }) != itemMap.end();
 }
 
 Item Map::getItem(int x, int y)
 {
-    auto it = _itemMap.find({ x, y });
-    if (it != _itemMap.end())
+    auto it = itemMap.find({ x, y });
+    if (it != itemMap.end())
     {
         Item item = it->second;
-        _itemMap.erase(it);
+        itemMap.erase(it);
         return item;
     }
     throw std::runtime_error("Item not found.");
@@ -73,7 +73,7 @@ void Map::placeItemsOnMap()
             if (!keyPlaced)
             {
                 setTile(x, y, 'K');
-                _itemMap[{x, y}] = Item("Key", "A key to open locked doors.");
+                itemMap[{x, y}] = Item("Key", "A key to open locked doors.");
                 keyPlaced = true;
             }
             if (!doorPlaced)
@@ -97,8 +97,8 @@ void Map::placeItemsOnMap()
 
         if (_map[y][x] == ' ')
         {
-            _itemMap[{x, y}] = Item("Potion", "Restores health.");
-            setTile(x, y, 'P');
+            itemMap[{x, y}] = Item("Potion", "Restores health.");
+            setTile(x, y, 'p');
         }
     }
 }

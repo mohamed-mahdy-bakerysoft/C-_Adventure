@@ -8,13 +8,13 @@
 class Player
 {
 private:
-    std::string _name;
-    int _health;
-    int _attack;
-    int _xp;
-    Point2D _position;
-    bool _hasKey;
-    std::vector<Item> _inventory;
+    std::string name;
+    int health;
+    int attack;
+    int xp;
+    Point2D position;
+    bool hasKey;
+    std::vector<Item> inventory;
 
 public:
     Player(std::string name, int health, int attack);

@@ -2,4 +2,4 @@
 #include <iostream>
 
 //constructor 
-Enemy::Enemy(int health, int attack) : _health(health), _attackDamage(attack) {}
+Enemy::Enemy(int health, int attack) : health(health), attackDamage(attack) {}

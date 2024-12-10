@@ -8,8 +8,8 @@ class Enemy
 {
 private:
 
-    int _health;
-    int _attackDamage;
+    int health;
+    int attackDamage;
 
 
 public:

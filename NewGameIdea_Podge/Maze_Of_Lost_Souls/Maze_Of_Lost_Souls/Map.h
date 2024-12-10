@@ -9,7 +9,7 @@ class Map
 private:
     int _width, _height;
     std::vector<std::vector<char>> _map;
-    std::map<Point2D, Item> _itemMap; // Store items directly
+    std::map<Point2D, Item> itemMap; // Store items directly
 
 public:
     Map(int width, int height);
