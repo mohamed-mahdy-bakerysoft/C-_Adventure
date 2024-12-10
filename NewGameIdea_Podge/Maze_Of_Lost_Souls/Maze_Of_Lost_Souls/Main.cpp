@@ -5,7 +5,6 @@
 #include <ctime>
 #include <fstream> // For save/load functionality
 #include <conio.h> // For _getch()
-
 #include "Map.h"
 #include "Player.h"
 #include "Point2D.h"
@@ -27,8 +26,7 @@ void displayMainMenu()
 void saveGame(const Player& player)
 {
     std::ofstream saveFile("savegame.txt");
-    saveFile << player.getName() << " " << player.getHealth() << " " << player.getXP() << " "
-        << player.getPosition().getX() << " " << player.getPosition().getY() << "\n";
+    saveFile << player.getName() << " " << player.getHealth() << " " << player.getXP() << " " << player.getPosition().getX() << " " << player.getPosition().getY() << "\n";
 
     // Use the public getInventory() method
     for (const auto& item : player.getInventory())
