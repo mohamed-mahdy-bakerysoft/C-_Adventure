@@ -61,8 +61,9 @@ void Map::placeItemsOnMap()
 {
     bool keyPlaced = false;
     bool doorPlaced = false;
+    bool enemyPlaced = false;
 
-    while (!keyPlaced || !doorPlaced)
+    while (!keyPlaced || !doorPlaced || !enemyPlaced)
     {
         int x = rand() % _width;
         int y = rand() % _height;
@@ -75,10 +76,15 @@ void Map::placeItemsOnMap()
                 _itemMap[{x, y}] = Item("Key", "A key to open locked doors.");
                 keyPlaced = true;
             }
-            else if (!doorPlaced)
+            if (!doorPlaced)
             {
                 setTile(x, y, 'D');
                 doorPlaced = true;
+            }
+            else if (!enemyPlaced)
+            {
+                setTile(x, y, 'E');
+                enemyPlaced = true;
             }
         }
     }

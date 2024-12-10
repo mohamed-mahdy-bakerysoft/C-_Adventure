@@ -49,7 +49,7 @@ void Player::collectItem(const Item& item)
         {
             //if player has key and tries to pick up the door it generates a new level
             //implement that shit here
-            
+
         }
     }
 }
@@ -61,7 +61,7 @@ void Player::showInventory()
     {
         std::cout << "Your inventory is empty." << std::endl;
     }
-    else 
+    else
     {
         for (const auto& item : _inventory)
         {
