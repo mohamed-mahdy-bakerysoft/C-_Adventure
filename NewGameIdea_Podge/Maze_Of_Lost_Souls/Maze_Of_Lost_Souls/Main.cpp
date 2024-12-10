@@ -114,8 +114,7 @@ int main()
                 gameMap.printMap();     // Display the map
 
                 // Print the player's status
-                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
-                    << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()<< " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
 
                 // If the inventory is visible, show it
                 if (inventoryVisible)
@@ -165,11 +164,9 @@ int main()
             {
                 system("cls");
                 gameMap.printMap();
-
-                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
-                    << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
-
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()<< " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
                 input = _getch();
+
                 if (input == 'q')
                 {
 

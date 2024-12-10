@@ -1,4 +1,3 @@
-
 #pragma once
 #include <vector>
 #include "Point2D.h"
@@ -15,10 +14,6 @@ private:
 public:
     Enemy(int health, int attack);
 
-
     // int getHealth() const;
-
-
-
 
 };

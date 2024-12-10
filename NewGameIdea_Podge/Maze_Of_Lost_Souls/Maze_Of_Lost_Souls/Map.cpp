@@ -6,7 +6,7 @@
 // Constructor for Map
 Map::Map(int width, int height) : _width(width), _height(height)
 {
-    _map.resize(height, std::vector<char>(width, ' '));
+    map.resize(height, std::vector<char>(width, ' '));
     srand(time(0));
 }
 
@@ -14,7 +14,7 @@ void Map::setTile(int x, int y, char symbol)
 {
     if (x >= 0 && x < _width && y >= 0 && y < _height)
     {
-        _map[y][x] = symbol;
+        map[y][x] = symbol;
     }
 }
 
@@ -24,7 +24,7 @@ void Map::printMap()
     {
         for (int x = 0; x < _width; ++x)
         {
-            std::cout << "[" << _map[y][x] << "]";
+            std::cout << "[" << map[y][x] << "]";
         }
         std::cout << std::endl;
     }
@@ -32,12 +32,12 @@ void Map::printMap()
 
 bool Map::isWalkable(int x, int y)
 {
-    return x >= 0 && x < _width && y >= 0 && y < _height && _map[y][x] != '#';
+    return x >= 0 && x < _width && y >= 0 && y < _height && map[y][x] != '#';
 }
 
 char Map::getTile(int x, int y)
 {
-    return _map[y][x];
+    return map[y][x];
 }
 
 bool Map::isItem(int x, int y)
@@ -68,7 +68,7 @@ void Map::placeItemsOnMap()
         int x = rand() % _width;
         int y = rand() % _height;
 
-        if (_map[y][x] == ' ')
+        if (map[y][x] == ' ')
         {
             if (!keyPlaced)
             {
@@ -95,7 +95,7 @@ void Map::placeItemsOnMap()
         int x = rand() % _width;
         int y = rand() % _height;
 
-        if (_map[y][x] == ' ')
+        if (map[y][x] == ' ')
         {
             itemMap[{x, y}] = Item("Potion", "Restores health.");
             setTile(x, y, 'p');

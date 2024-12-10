@@ -1,7 +1,7 @@
 ﻿  Enemy.cpp
   Item.cpp
   Main.cpp
-C:\Users\padra\source\repos\C-_Adventure\NewGameIdea_Podge\Maze_Of_Lost_Souls\Maze_Of_Lost_Souls\Main.cpp(132,21): warning C4551: function call missing argument list
+C:\Users\padra\source\repos\C-_Adventure\NewGameIdea_Podge\Maze_Of_Lost_Souls\Maze_Of_Lost_Souls\Main.cpp(129,21): warning C4551: function call missing argument list
   Map.cpp
 C:\Users\padra\source\repos\C-_Adventure\NewGameIdea_Podge\Maze_Of_Lost_Souls\Maze_Of_Lost_Souls\Map.cpp(10,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Player.cpp

@@ -2,8 +2,7 @@
 #include <iostream>
 
 // Constructor to initialize item properties
-Item::Item(std::string name, std::string description)
-    : name(name), description(description)
+Item::Item(std::string name, std::string description) : name(name), description(description)
 {
 
 }
