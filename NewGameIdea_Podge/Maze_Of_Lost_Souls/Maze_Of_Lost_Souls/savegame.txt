@@ -1,7 +1,7 @@
-podge 100 6 4 7
-Potion
+podge 100 6 2 2
 Potion
 Key
+Potion
 Potion
 Potion
 Potion

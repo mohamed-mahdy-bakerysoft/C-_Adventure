@@ -1,3 +1,4 @@
+#include <windows.h> // text color changes
 #include "Map.h"
 #include <cstdlib>
 #include <ctime>
@@ -18,17 +19,30 @@ void Map::setTile(int x, int y, char symbol)
     }
 }
 
+
 void Map::printMap()
 {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // found on google to make it more clear where player is
+
     for (int y = 0; y < _height; ++y)
     {
         for (int x = 0; x < _width; ++x)
         {
-            std::cout << "[" << map[y][x] << "]";
+            if (map[y][x] == '*') // If the tile is the *
+            {
+                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY); // Green color
+                std::cout << "[" << map[y][x] << "]";
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); // Reset color
+            }
+            else
+            {
+                std::cout << "[" << map[y][x] << "]"; // Print other tiles as-is
+            }
         }
         std::cout << std::endl;
     }
 }
+
 
 bool Map::isWalkable(int x, int y)
 {
