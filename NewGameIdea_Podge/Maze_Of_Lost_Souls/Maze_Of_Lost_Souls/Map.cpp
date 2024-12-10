@@ -116,6 +116,5 @@ void Map::generateMaze()
         }
     }
 
-    placeItemsOnMap();
-    setTile(1, 1, 'P'); // Player starts at (1,1)
+    placeItemsOnMap();// places items within game
 }

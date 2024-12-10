@@ -29,7 +29,7 @@ void Player::move(char direction, Map& gameMap)
         gameMap.setTile(position.getX(), position.getY(), ' ');
         position.setX(newX);
         position.setY(newY);
-        gameMap.setTile(newX, newY, 'P');
+        gameMap.setTile(newX, newY, '*');
     }
 }
 
