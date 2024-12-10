@@ -73,7 +73,16 @@ void Player::showInventory()
 // Gain experience points
 void Player::gainXP(int xp)
 {
-    xp += xp;
+    this->xp += xp; // Explicitly update the class member 'xp'
+}
+
+void Player::heal(int amount)
+{
+    health += amount;
+    if (health > 100) // Assuming max health is 100
+    {
+        health = 100;
+    }
 }
 
 // Calculate the player's level

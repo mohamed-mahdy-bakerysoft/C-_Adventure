@@ -68,7 +68,7 @@ void loadGame(Player& player, Map& gameMap)
     // Clear and rebuild the player's inventory
     std::string itemName;
     while (loadFile >> itemName)
-{
+    {
         player.collectItem(Item(itemName, "Restored item from save"));
     }
 
@@ -77,7 +77,6 @@ void loadGame(Player& player, Map& gameMap)
 
     std::cout << "Game successfully loaded!" << std::endl;
 }
-
 
 int main()
 {
@@ -114,7 +113,7 @@ int main()
                 gameMap.printMap();     // Display the map
 
                 // Print the player's status
-                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()<< " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth() << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
 
                 // If the inventory is visible, show it
                 if (inventoryVisible)
@@ -126,7 +125,7 @@ int main()
 
                 if (input == 'q')
                 {
-                    saveGame;
+                    saveGame(player); // Save the game state before exiting
                     break; // Exit the game loop
                 }
                 else if (input == ' ')
@@ -138,6 +137,13 @@ int main()
                     {
                         Item item = gameMap.getItem(x, y); // Fetch the actual item from the map
                         player.collectItem(item);
+
+                        // Heal if the item is a potion
+                        if (item.getName() == "Potion")
+                        {
+                            player.heal(20); // Example: Restore 20 health
+                        }
+
                         gameMap.setTile(x, y, ' '); // Remove the item from the map
                     }
                 }
@@ -164,12 +170,11 @@ int main()
             {
                 system("cls");
                 gameMap.printMap();
-                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()<< " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth() << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
                 input = _getch();
 
                 if (input == 'q')
                 {
-
                     break;
                 }
                 else if (input == ' ')
@@ -180,6 +185,13 @@ int main()
                     {
                         Item item = gameMap.getItem(x, y); // Fetch the actual item from the map
                         player.collectItem(item);
+
+                        // Heal if the item is a potion
+                        if (item.getName() == "Potion")
+                        {
+                            player.heal(20); // Example: Restore 20 health
+                        }
+
                         gameMap.setTile(x, y, ' '); // Remove the item from the map
                     }
                 }

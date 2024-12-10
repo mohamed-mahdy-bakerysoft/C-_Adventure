@@ -24,6 +24,7 @@ public:
     void gainXP(int xp);
     void showInventory();
     int getLevel() const;
+    void heal(int amount);
 
     void setPosition(int x, int y);
     std::string getName() const;
