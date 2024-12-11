@@ -1,5 +1,7 @@
 #include "Player.h"
 #include <iostream>
+#include <chrono> // Sleep
+#include <thread>// Sleep
 #include "Map.h"
 
 // Constructor
@@ -40,10 +42,27 @@ void Player::move(char direction, Map& gameMap)
 
     if (gameMap.isWalkable(newX, newY))
     {
-        gameMap.setTile(position.getX(), position.getY(), ' ');
-        position.setX(newX);
-        position.setY(newY);
-        gameMap.setTile(newX, newY, '*');
+        if (gameMap.getTile(newX, newY) == 'D') // Check for door
+        {
+            if (hasKey)
+            {
+                std::cout << "Door Unlocked. Proceeding to next level." << std::endl;
+                std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                // Need to make level 2
+            }
+            else
+            {
+                std::cout << "Key Needed." << std::endl;
+                std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            }
+        }
+        else
+        {
+            gameMap.setTile(position.getX(), position.getY(), ' ');
+            position.setX(newX);
+            position.setY(newY);
+            gameMap.setTile(newX, newY, '*');
+        }
     }
 }
 
@@ -56,13 +75,6 @@ void Player::collectItem(const Item& item)
     if (item.getName() == "Key")
     {
         hasKey = true;
-    }
-    else if (hasKey)
-    {
-        if (item.getName() == "")
-        {
-            // TODO: Generate a new level if the player has the key and interacts with the door
-        }
     }
 }
 
