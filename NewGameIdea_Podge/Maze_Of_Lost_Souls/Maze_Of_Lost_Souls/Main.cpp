@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
-#include <ctime>
 #include <fstream> // For save/load functionality
 #include <conio.h> // For _getch()
 #include "Map.h"
@@ -11,7 +10,7 @@
 #include "Item.h"
 #include "Enemy.h"
 
-// This function shows the main menu of the game
+// This shows the main menu where I can start, load, or quit the game
 void displayMainMenu()
 {
     std::cout << "============================================" << std::endl;
@@ -23,15 +22,17 @@ void displayMainMenu()
     std::cout << "   ==========================================" << std::endl;
 }
 
-// Save the player's state
+// Saves my game by writing the player's data to a file
 void saveGame(const Player& player)
 {
     std::ofstream saveFile("savegame.txt");
 
-    // Save player attributes
-    saveFile << player.getName() << " " << player.getHealth() << " " << player.getXP()<< " " << player.getPosition().getX() << " " << player.getPosition().getY() << "\n";
+    // Save the player's current state
+    saveFile << player.getName() << " " << player.getHealth() << " "
+        << player.getXP() << " " << player.getPosition().getX() << " "
+        << player.getPosition().getY() << "\n";
 
-    // Save inventory items
+    // Save all the items in the inventory
     for (const auto& item : player.getInventory())
     {
         saveFile << item.getName() << " " << item.getDescription() << "\n";
@@ -41,11 +42,12 @@ void saveGame(const Player& player)
     std::cout << "Game saved!" << std::endl;
 }
 
-// Load the player's state
+// Loads my saved game from a file
 void loadGame(Player& player, Map& gameMap)
 {
     std::ifstream loadFile("savegame.txt");
 
+    // Check if the save file exists
     if (!loadFile.is_open())
     {
         std::cout << "No save file found. Starting a new game." << std::endl;
@@ -55,10 +57,10 @@ void loadGame(Player& player, Map& gameMap)
     std::string playerName;
     int health, xp, x, y;
 
-    // Load player attributes
+    // Read player data
     if (!(loadFile >> playerName >> health >> xp >> x >> y))
     {
-        std::cerr << "Error reading player data from save file. Starting a new game." << std::endl;
+        std::cerr << "Error reading player data. Starting a new game." << std::endl;
         return;
     }
 
@@ -66,114 +68,111 @@ void loadGame(Player& player, Map& gameMap)
     player.setPosition(x, y);
     player.gainXP(xp);
 
-    // Clear and rebuild the inventory
+    // Load the player's inventory
     std::string itemName, itemDescription;
     while (loadFile >> itemName)
     {
-        std::getline(loadFile, itemDescription); // show the item's description
+        std::getline(loadFile, itemDescription);
         if (!itemDescription.empty() && itemDescription[0] == ' ')
         {
-            itemDescription.erase(0, 1); // Remove space from description
+            itemDescription.erase(0, 1);
         }
         player.collectItem(Item(itemName, itemDescription));
     }
 
-    // Update the map to reflect the player's position
+    // Update the map with the player's position
     gameMap.setTile(x, y, '*');
     std::cout << "Game successfully loaded!" << std::endl;
 }
- 
+
 int main()
 {
-    Enemy enemy;
-    
+    Enemy enemy; // Enemy to interact with during the game
     std::string playerName;
     char menuChoice;
 
-    // Show the main menu
-    displayMainMenu();
+    displayMainMenu(); // Show the game menu
 
     while (true)
     {
-        menuChoice = _getch();
+        menuChoice = _getch(); // Get input from the menu
 
-        if (menuChoice == '1')
-        { // Start new game
+        if (menuChoice == '1') // Start a new game
+        {
             std::cout << "Enter your player name: ";
             std::getline(std::cin, playerName);
 
             if (playerName.empty())
             {
-                playerName = "Hero"; // Default name if no input
+                playerName = "Hero"; // Default name
             }
 
-            Player player(playerName, 100, 10); // Create player
-            Map gameMap(10, 10);               // Create a map of size 10x10
-            gameMap.generateMaze();           // Generate a maze
+            Player player(playerName, 100, 10); // Create a player
+            Map gameMap(10, 10);               // Create a 10x10 map
+            gameMap.generateMaze();           // Generate a random maze
 
-            bool inventoryVisible = false; // Initialize inventory visibility toggle
+            bool inventoryVisible = false; // Keep track of inventory visibility
 
             char input;
             while (true)
             {
-                system("cls");          // Clear screen
-                gameMap.printMap();     // Display the map
+                system("cls");          // Clear the console
+                gameMap.printMap();     // Show the map
 
-                // Print the player's status
-                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth() << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+                // Display the player's current stats
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
+                    << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
 
-                // If the inventory is visible, show it
+                // Show inventory if toggled
                 if (inventoryVisible)
                 {
                     player.showInventory();
                 }
 
-                input = _getch(); // Get player input
+                input = _getch(); // Get input for movement or actions
 
-                if (input == 'q')
+                if (input == 'q') // Quit the game
                 {
-                    saveGame(player); // Save the game state before exiting
-                    break; // Exit the game loop
+                    saveGame(player); // Save the game before exiting
+                    break;
                 }
-                else if (input == ' ')
+                else if (input == ' ') // Pick up an item
                 {
-                    // Attempt to pick up an item if standing on one
                     int x = player.getPosition().getX();
                     int y = player.getPosition().getY();
                     if (gameMap.isItem(x, y))
                     {
-                        Item item = gameMap.getItem(x, y); // Fetch the actual item from the map
+                        Item item = gameMap.getItem(x, y);
                         player.collectItem(item);
 
-                        // Heal if the item is a potion
                         if (item.getName() == "Potion")
                         {
-                            player.heal(20); // Example: Restore 20 health
+                            player.heal(20); // Heal player
                         }
-                        else if( item.getName() == "Enemy")
+                        else if (item.getName() == "Enemy")
                         {
-                            enemy.Damage_Player(20);
+                            enemy.Damage_Player(20); // Enemy interaction
                         }
 
-                        gameMap.setTile(x, y, ' '); // Remove the item from the map
+                        gameMap.setTile(x, y, ' '); // Remove the item
                     }
                 }
-                else if (input == 'i')
+                else if (input == 'i') // Toggle inventory visibility
                 {
-                    inventoryVisible = !inventoryVisible; // Toggle inventory visibility
+                    inventoryVisible = !inventoryVisible;
                 }
-                else
+                else // Move the player
                 {
-                    player.move(input, gameMap); // Move player on the map
+                    player.move(input, gameMap);
                 }
             }
-            break; // Exit main menu loop
+            break; // Exit the game loop
         }
-        else if (menuChoice == '2')
-        { // Load game
-            Player player("Hero", 100, 10); // Default values; overwritten by loadGame
-            Map gameMap(10, 10);           // Create a map of size 10x10
-            gameMap.generateMaze();        // Generate a maze
+        else if (menuChoice == '2') // Load a saved game
+        {
+            Player player("Hero", 100, 10);
+            Map gameMap(10, 10);
+            gameMap.generateMaze();
             loadGame(player, gameMap);
 
             char input;
@@ -181,52 +180,45 @@ int main()
             {
                 system("cls");
                 gameMap.printMap();
-                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth() << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+                std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
+                    << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
                 input = _getch();
 
-                if (input == 'q')
+                if (input == 'q') // Quit the game
                 {
                     break;
                 }
-                else if (input == ' ')
+                else if (input == ' ') // Pick up an item
                 {
                     int x = player.getPosition().getX();
                     int y = player.getPosition().getY();
                     if (gameMap.isItem(x, y))
                     {
-                        Item item = gameMap.getItem(x, y); // Fetch the actual item from the map
+                        Item item = gameMap.getItem(x, y);
                         player.collectItem(item);
 
-                        // Heal if the item is a potion
                         if (item.getName() == "Potion")
                         {
-                            player.heal(20); // Example: Restore 20 health
+                            player.heal(20);
                         }
-                        /*if (item.getName() == "Enemy")
-                        {
-                            Enemy enemy;
-                            enemy.Damage_Player(20);
-                        }*/
-
-
-                        gameMap.setTile(x, y, ' '); // Remove the item from the map
+                        gameMap.setTile(x, y, ' '); // Remove the item
                     }
                 }
-                else
+                else // Move the player
                 {
-                    player.move(input, gameMap); // Move player
+                    player.move(input, gameMap);
                 }
             }
             break;
         }
-        else if (menuChoice == '3')
-        { // Quit
+        else if (menuChoice == '3') // Quit
+        {
             std::cout << "Exiting game. Goodbye!" << std::endl;
             break;
         }
-        else
+        else // Invalid menu choice
         {
-            std::cout << "Invalid choice, please press '1' to start, '2' to load, or '3' to quit." << std::endl;
+            std::cout << "Invalid choice, please press '1', '2', or '3'." << std::endl;
         }
     }
 

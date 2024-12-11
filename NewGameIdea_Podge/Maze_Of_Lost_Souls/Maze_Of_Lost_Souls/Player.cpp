@@ -11,6 +11,7 @@ Player::Player(std::string name, int health, int attack)
 
 Player::Player()
 {
+
 }
 
 // Move the player on the map
@@ -21,11 +22,20 @@ void Player::move(char direction, Map& gameMap)
 
     switch (direction)
     {
-    case 'w': newY--; break;
-    case 's': newY++; break;
-    case 'a': newX--; break;
-    case 'd': newX++; break;
-    default: return;
+    case 'w':
+        newY--;
+        break;
+    case 's':
+        newY++;
+        break;
+    case 'a':
+        newX--;
+        break;
+    case 'd':
+        newX++;
+        break;
+    default:
+        return;
     }
 
     if (gameMap.isWalkable(newX, newY))
@@ -42,18 +52,16 @@ void Player::collectItem(const Item& item)
 {
     inventory.push_back(item);
     gainXP(1);
+
     if (item.getName() == "Key")
     {
         hasKey = true;
     }
-    //Open nenoor
-    else if (hasKey == true)
+    else if (hasKey)
     {
         if (item.getName() == "")
         {
-            //if player has key and tries to pick up the door it generates a new level
-            //implement that shit here
-
+            // TODO: Generate a new level if the player has the key and interacts with the door
         }
     }
 }
@@ -77,12 +85,14 @@ void Player::showInventory()
 // Gain experience points
 void Player::gainXP(int xp)
 {
-    this->xp += xp; // Explicitly update the class member 'xp'
+    this->xp += xp;
 }
 
+// Heal the player
 void Player::heal(int amount)
 {
     health += amount;
+
     if (health > 100) // Assuming max health is 100
     {
         health = 100;
@@ -102,6 +112,7 @@ void Player::setPosition(int x, int y)
     position.setY(y);
 }
 
+// Set the player's health
 void Player::setHealth(int health)
 {
     this->health = health;
