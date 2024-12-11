@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|solutionrelative:Maze_Of_Lost_Souls\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|solutionrelative:Maze_Of_Lost_Souls\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|solutionrelative:Maze_Of_Lost_Souls\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|solutionrelative:Maze_Of_Lost_Souls\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|solutionrelative:Maze_Of_Lost_Souls\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|solutionrelative:Maze_Of_Lost_Souls\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A79A9C3-6CD5-44E5-8303-1EE70DDBB6C8}|Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls.vcxproj|C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -50,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 270,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Main.cpp",
               "RelativeDocumentMoniker": "Maze_Of_Lost_Souls\\Main.cpp",
               "ToolTip": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Main.cpp",
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Main.cpp",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAWwHMAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJ0AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-04T12:00:35.747Z",
               "IsPinned": true,
@@ -68,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Player.cpp",
               "RelativeDocumentMoniker": "Maze_Of_Lost_Souls\\Player.cpp",
               "ToolTip": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Player.cpp",
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Player.cpp",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAmwGsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-11T20:00:49.355Z",
               "EditorCaption": ""
@@ -93,13 +93,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Map.cpp",
               "RelativeDocumentMoniker": "Maze_Of_Lost_Souls\\Map.cpp",
               "ToolTip": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Map.cpp",
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Map.cpp",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFwAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-04T12:11:57.706Z",
               "EditorCaption": ""
@@ -142,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Item.cpp",
               "DocumentMoniker": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Item.cpp",
               "RelativeDocumentMoniker": "Maze_Of_Lost_Souls\\Item.cpp",
@@ -150,12 +150,11 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Item.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T12:48:58.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:48:58.53Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Item.h",
               "DocumentMoniker": "C:\\Users\\lpmma\\Documents\\GitHub\\C-_Adventure\\NewGameIdea_Podge\\Maze_Of_Lost_Souls\\Maze_Of_Lost_Souls\\Item.h",
               "RelativeDocumentMoniker": "Maze_Of_Lost_Souls\\Item.h",
@@ -163,8 +162,7 @@
               "RelativeToolTip": "Maze_Of_Lost_Souls\\Item.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T12:48:46.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:48:46.308Z"
             },
             {
               "$type": "Document",
