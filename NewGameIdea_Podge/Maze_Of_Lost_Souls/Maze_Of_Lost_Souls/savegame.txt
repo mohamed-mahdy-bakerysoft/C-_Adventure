@@ -1,1 +1,2 @@
-Hero 100 0 0 2
+liam 90 3 9 5
+Potion Restores health.

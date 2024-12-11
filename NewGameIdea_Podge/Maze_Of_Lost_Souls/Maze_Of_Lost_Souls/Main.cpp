@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <chrono> // Sleep
+#include <thread>// Sleep
 #include <fstream> // For save/load functionality
 #include <conio.h> // For _getch()
 #include "Map.h"
@@ -107,7 +109,7 @@ int main()
                 playerName = "Hero"; // Default name
             }
 
-            Player player(playerName, 100, 10); // Create a player
+            Player player(playerName, 50, 10); // Create a player
             Map gameMap(10, 10);               // Create a 10x10 map
             gameMap.generateMaze();           // Generate a random maze
 
@@ -136,33 +138,49 @@ int main()
                     saveGame(player); // Save the game before exiting
                     break;
                 }
-                else if (input == ' ') // Pick up an item
+                else if (input == 'i') // Toggle inventory visibility
                 {
+                    inventoryVisible = !inventoryVisible;
+                    while (_kbhit()) _getch();
+                }
+                else if (input == 'h') //Use a Potion
+                {
+                    if (player.getHealth() == 100)
+                    {
+                        std::cout << "At Max Health!" << std::endl;
+                        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                    }
+                    else if (player.hasItem("Potion"))
+                    {
+                        player.heal(20);
+                        player.discardItem("Potion");
+                        std::cout << "1 potion used. Health restored." << std::endl;
+                        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                    }
+                    else
+                    {
+                        std::cout << "You don't have any potions." << std::endl;
+                        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                    }
+                    while (_kbhit()) _getch(); // Clear input
+                }
+                else // Move the player
+                {
+                    // Attempt to pick up an item if standing on one
                     int x = player.getPosition().getX();
                     int y = player.getPosition().getY();
                     if (gameMap.isItem(x, y))
                     {
-                        Item item = gameMap.getItem(x, y);
+                        Item item = gameMap.getItem(x, y); // Pickup item from the map
                         player.collectItem(item);
 
-                        if (item.getName() == "Potion")
+                        /*else if (item.getName() == "Enemy")
                         {
-                            player.heal(20); // Heal player
-                        }
-                        else if (item.getName() == "Enemy")
-                        {
-                            enemy.Damage_Player(20); // Enemy interaction
-                        }
+                            enemy.Damage_Player(20);
+                        }*/
 
                         gameMap.setTile(x, y, ' '); // Remove the item
                     }
-                }
-                else if (input == 'i') // Toggle inventory visibility
-                {
-                    inventoryVisible = !inventoryVisible;
-                }
-                else // Move the player
-                {
                     player.move(input, gameMap);
                 }
             }
@@ -170,11 +188,12 @@ int main()
         }
         else if (menuChoice == '2') // Load a saved game
         {
-            Player player("Hero", 100, 10);
+            Player player("Hero", 50, 10);
             Map gameMap(10, 10);
             gameMap.generateMaze();
             loadGame(player, gameMap);
 
+            bool inventoryVisible = false; // Keep track of inventory visibility
             char input;
             while (true)
             {
@@ -182,30 +201,62 @@ int main()
                 gameMap.printMap();
                 std::cout << "Player: " << player.getName() << " | Health: " << player.getHealth()
                     << " | XP: " << player.getXP() << " | Level: " << player.getLevel() << std::endl;
+                
+                // Show inventory if toggled
+                if (inventoryVisible)
+                {
+                    player.showInventory();
+                }
                 input = _getch();
 
                 if (input == 'q') // Quit the game
                 {
                     break;
                 }
-                else if (input == ' ') // Pick up an item
+                else if (input == 'i') // Toggle inventory visibility
+                {
+                    inventoryVisible = !inventoryVisible;
+                    while (_kbhit()) _getch();
+                }
+                else if (input == 'h') //Use a Potion
+                {
+                    if (player.getHealth() == 100)
+                    {
+                        std::cout << "At Max Health!" << std::endl;
+                        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                    }
+                    else if (player.hasItem("Potion"))
+                    {
+                        player.heal(20);
+                        player.discardItem("Potion");
+                        std::cout << "1 Potion Used. Health restored." << std::endl;
+                        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                    }
+                    else
+                    {
+                        std::cout << "You don't have any potions." << std::endl;
+                        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                    }
+                    while (_kbhit()) _getch(); // Clear input
+                }
+                else // Move the player
                 {
                     int x = player.getPosition().getX();
                     int y = player.getPosition().getY();
                     if (gameMap.isItem(x, y))
                     {
-                        Item item = gameMap.getItem(x, y);
+                        Item item = gameMap.getItem(x, y); // Pickup item from the map
                         player.collectItem(item);
 
-                        if (item.getName() == "Potion")
+                        /*if (item.getName() == "Enemy")
                         {
-                            player.heal(20);
-                        }
-                        gameMap.setTile(x, y, ' '); // Remove the item
+                            Enemy enemy;
+                            enemy.Damage_Player(20);
+                        }*/
+
+
+                        gameMap.setTile(x, y, ' '); // Remove Item
                     }
-                }
-                else // Move the player
-                {
                     player.move(input, gameMap);
                 }
             }

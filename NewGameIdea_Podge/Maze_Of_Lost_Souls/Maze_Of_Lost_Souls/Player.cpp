@@ -82,6 +82,31 @@ void Player::showInventory()
     }
 }
 
+// Checks Players Inventory for Item
+bool Player::hasItem(const std::string& itemName)
+{
+    for (const Item& item : inventory)
+    {
+        if (item.getName() == itemName)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+// Player uses an Item, discards one instance
+void Player::discardItem(const std::string& itemName)
+{
+    for (auto it = inventory.begin(); it != inventory.end(); ++it)
+    {
+        if (it->getName() == itemName)
+        {
+            inventory.erase(it);
+            break;
+        }
+    }
+}
+
 // Gain experience points
 void Player::gainXP(int xp)
 {

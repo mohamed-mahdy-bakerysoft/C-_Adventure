@@ -25,7 +25,8 @@ public:
     void showInventory();
     int getLevel() const;
     void heal(int amount);
-
+    bool hasItem(const std::string& itemName);
+    void discardItem(const std::string& itemName);
     void setPosition(int x, int y);
     void setHealth(int health);
     std::string getName() const;
