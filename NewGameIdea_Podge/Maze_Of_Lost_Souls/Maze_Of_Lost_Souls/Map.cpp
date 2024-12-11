@@ -112,7 +112,7 @@ void Map::placeItemsOnMap()
         if (map[y][x] == ' ')
         {
             itemMap[{x, y}] = Item("Potion", "Restores health.");
-            setTile(x, y, 'p');
+            setTile(x, y, 'P');
         }
     }
 }

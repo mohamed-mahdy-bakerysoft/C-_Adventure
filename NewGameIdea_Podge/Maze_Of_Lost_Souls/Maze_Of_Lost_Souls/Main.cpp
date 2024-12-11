@@ -193,7 +193,7 @@ int main()
                         // Heal if the item is a potion
                         if (item.getName() == "Potion")
                         {
-                            player.heal(20); // Example: Restore 20 health
+                            player.heal(20); // Restore 20 health
                         }
 
                         gameMap.setTile(x, y, ' '); // Remove the item from the map
