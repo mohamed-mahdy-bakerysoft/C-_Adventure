@@ -57,10 +57,11 @@ void Player::collectItem(const Item& item)
     {
         hasKey = true;
     }
-    else if (hasKey)
+    else if (hasKey==true)
     {
-        if (item.getName() == "")
+        if (item.getName() == "D")
         {
+           // Map::generateMaze();
             // TODO: Generate a new level if the player has the key and interacts with the door
         }
     }

@@ -93,6 +93,7 @@ void Map::placeItemsOnMap()
             else if (!doorPlaced)
             {
                 setTile(x, y, 'D');
+                itemMap[{x, y}] = Item("Door", "A Door to enter next level.");
                 doorPlaced = true;
             }
             else if (!enemyPlaced)
