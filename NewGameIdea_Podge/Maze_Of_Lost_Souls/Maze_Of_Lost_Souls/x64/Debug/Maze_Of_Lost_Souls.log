@@ -1,5 +1,2 @@
-﻿  Item.cpp
-  Main.cpp
-  Player.cpp
-  Generating Code...
-C:\Users\padra\source\repos\C-_Adventure\NewGameIdea_Podge\Maze_Of_Lost_Souls\Maze_Of_Lost_Souls\Player.cpp(48,9): error C3867: 'Player::damage': non-standard syntax; use '&' to create a pointer to member
+﻿  Main.cpp
+  Maze_Of_Lost_Souls.vcxproj -> C:\Users\ghhmi\Documents\GitHub\C-_Adventure\NewGameIdea_Podge\Maze_Of_Lost_Souls\x64\Debug\Maze_Of_Lost_Souls.exe

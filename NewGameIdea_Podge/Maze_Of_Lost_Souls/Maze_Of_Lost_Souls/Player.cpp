@@ -9,6 +9,10 @@ Player::Player(std::string name, int health, int attack)
 
 }
 
+Player::Player()
+{
+}
+
 // Move the player on the map
 void Player::move(char direction, Map& gameMap)
 {
@@ -96,6 +100,11 @@ void Player::setPosition(int x, int y)
 {
     position.setX(x);
     position.setY(y);
+}
+
+void Player::setHealth(int health)
+{
+    this->health = health;
 }
 
 // Get the player's name

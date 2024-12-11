@@ -13,7 +13,7 @@ private:
 
 public:
     Enemy(int health, int attack);
-
-    // int getHealth() const;
+    Enemy();
+    void Damage_Player(int Damage);
 
 };

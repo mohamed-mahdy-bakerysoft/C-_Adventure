@@ -18,7 +18,7 @@ private:
 
 public:
     Player(std::string name, int health, int attack);
-
+    Player();
     void move(char direction, Map& gameMap);
     void collectItem(const Item& item);
     void gainXP(int xp);
@@ -27,6 +27,7 @@ public:
     void heal(int amount);
 
     void setPosition(int x, int y);
+    void setHealth(int health);
     std::string getName() const;
     int getHealth() const;
     int getXP() const;

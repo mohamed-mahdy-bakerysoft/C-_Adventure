@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "Point2D.h"
 #include "Item.h"
+#include "Enemy.h"
 
 // This function shows the main menu of the game
 void displayMainMenu()
@@ -81,9 +82,11 @@ void loadGame(Player& player, Map& gameMap)
     gameMap.setTile(x, y, '*');
     std::cout << "Game successfully loaded!" << std::endl;
 }
-
+ 
 int main()
 {
+    Enemy enemy;
+    
     std::string playerName;
     char menuChoice;
 
@@ -147,6 +150,10 @@ int main()
                         {
                             player.heal(20); // Example: Restore 20 health
                         }
+                        else if( item.getName() == "Enemy")
+                        {
+                            enemy.Damage_Player(20);
+                        }
 
                         gameMap.setTile(x, y, ' '); // Remove the item from the map
                     }
@@ -195,6 +202,12 @@ int main()
                         {
                             player.heal(20); // Example: Restore 20 health
                         }
+                        /*if (item.getName() == "Enemy")
+                        {
+                            Enemy enemy;
+                            enemy.Damage_Player(20);
+                        }*/
+
 
                         gameMap.setTile(x, y, ' '); // Remove the item from the map
                     }

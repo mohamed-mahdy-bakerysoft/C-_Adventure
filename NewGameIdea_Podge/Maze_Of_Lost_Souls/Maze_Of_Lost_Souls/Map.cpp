@@ -97,7 +97,8 @@ void Map::placeItemsOnMap()
             }
             else if (!enemyPlaced)
             {
-                setTile(x, y, 'E');
+                setTile(x, y, 'x'); // named x for testing
+                
                 enemyPlaced = true;
             }
         }
@@ -112,7 +113,7 @@ void Map::placeItemsOnMap()
         if (map[y][x] == ' ')
         {
             itemMap[{x, y}] = Item("Potion", "Restores health.");
-            setTile(x, y, 'p');
+            setTile(x, y, 'P');
         }
     }
 }
