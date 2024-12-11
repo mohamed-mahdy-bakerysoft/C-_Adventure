@@ -90,7 +90,7 @@ void Map::placeItemsOnMap()
                 itemMap[{x, y}] = Item("Key", "A key to open locked doors.");
                 keyPlaced = true;
             }
-            if (!doorPlaced)
+            else if (!doorPlaced)
             {
                 setTile(x, y, 'D');
                 doorPlaced = true;
