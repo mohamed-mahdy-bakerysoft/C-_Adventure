@@ -1,8 +1,8 @@
 #pragma once
-#include <vector>
-#include <map>
 #include "Item.h"
+#include <map>
 #include "Point2D.h"
+#include <vector>
 
 class Map
 {
@@ -12,14 +12,13 @@ private:
     std::map<Point2D, Item> itemMap; // Store items directly
 
 public:
-    Map(int width, int height);
-
-    void setTile(int x, int y, char symbol);
-    void printMap();
-    bool isWalkable(int x, int y);
-    void generateMaze();
-    char getTile(int x, int y);
     bool isItem(int x, int y);
+    bool isWalkable(int x, int y);
+    char getTile(int x, int y);
     Item getItem(int x, int y); // Fetch item from the map
+    Map(int width, int height);
+    void generateMaze();
     void placeItemsOnMap();
+    void printMap();
+    void setTile(int x, int y, char symbol);
 };

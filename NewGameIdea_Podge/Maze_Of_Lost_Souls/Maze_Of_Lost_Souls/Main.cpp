@@ -1,16 +1,16 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <cstdlib>
 #include <chrono> // Sleep
-#include <thread>// Sleep
-#include <fstream> // For save/load functionality
 #include <conio.h> // For _getch()
+#include <cstdlib>
+#include "Enemy.h"
+#include <fstream> // For save/load functionality
+#include <iostream>
+#include "Item.h"
 #include "Map.h"
 #include "Player.h"
 #include "Point2D.h"
-#include "Item.h"
-#include "Enemy.h"
+#include <string>
+#include <thread>// Sleep
+#include <vector>
 
 // This shows the main menu where I can start, load, or quit the game
 void displayMainMenu()
@@ -172,34 +172,40 @@ int main()
                     if (gameMap.isItem(x, y))
                     {
                         Item item = gameMap.getItem(x, y); // Pickup item from the map
-                        player.collectItem(item);
-
-                        // Check if player has key and door
-                        if (player.hasItem("Door") && player.hasItem("Key"))
+                        if (item.getName() == "Enemy")
                         {
-                            std::cout << "You used the Key to unlock the Door! A new maze will be generated." << std::endl;
-                            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
-                            // Remove the key and door from inventory
-                            player.discardItem("Key");
-                            player.discardItem("Door");
-
-                            // Generate a new map
-                            gameMap = Map(10, 10); // Create a new map
-                            gameMap.generateMaze(); // Generate the new maze
-
-                            // Reset the player's position
-                            player.setPosition(0, 0); // Start at the top-left
-                            gameMap.setTile(0, 0, '*'); // Mark the player's starting position
-                            player.gainXP(100);
+                            Enemy enemy; // Create an enemy object
+                            enemy.Damage_Player(player, 20); // Call Damage_Player function
+                            gameMap.setTile(x, y, ' '); // Remove the enemy from the map
+                            std::cout << "You encountered an enemy! You lose 20 health." << std::endl;
+                            std::this_thread::sleep_for(std::chrono::milliseconds(300));
                         }
-
-                        /*else if (item.getName() == "Enemy")
+                        else
                         {
-                            enemy.Damage_Player(20);
-                        }*/
+                            player.collectItem(item);
 
-                        gameMap.setTile(x, y, ' '); // Remove the item
+                            // Check if player has key and door
+                            if (player.hasItem("Door") && player.hasItem("Key"))
+                            {
+                                std::cout << "You used the Key to unlock the Door! A new maze will be generated." << std::endl;
+                                std::this_thread::sleep_for(std::chrono::milliseconds(300));
+
+                                // Remove the key and door from inventory
+                                player.discardItem("Key");
+                                player.discardItem("Door");
+
+                                // Generate a new map
+                                gameMap = Map(10, 10); // Create a new map
+                                gameMap.generateMaze(); // Generate the new maze
+
+                                // Reset the player's position
+                                player.setPosition(0, 0); // Start at the top-left
+                                gameMap.setTile(0, 0, '*'); // Mark the player's starting position
+                                player.gainXP(100);
+                            }
+                            gameMap.setTile(x, y, ' '); // Remove the item
+                        }
+                        
                     }
                     player.move(input, gameMap);
                 }
@@ -267,36 +273,40 @@ int main()
                     if (gameMap.isItem(x, y))
                     {
                         Item item = gameMap.getItem(x, y); // Pickup item from the map
-                        player.collectItem(item);
-
-                        // Check if player has key and door
-                        if (player.hasItem("Door") && player.hasItem("Key"))
+                        if (item.getName() == "Enemy")
                         {
-                            std::cout << "You used the Key to unlock the Door! A new maze will be generated." << std::endl;
-                            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                            Enemy enemy; // Create an enemy object
+                            enemy.Damage_Player(player, 20); // Call Damage_Player function
+                            gameMap.setTile(x, y, ' '); // Remove the enemy from the map
+                            std::cout << "You encountered an enemy! You lose 20 health." << std::endl;
+                            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+                        }
+                        else
+                        {
+                            player.collectItem(item);
 
-                            // Remove the key from inventory
-                            player.discardItem("Key");
-                            player.discardItem("Door");
+                            // Check if player has key and door
+                            if (player.hasItem("Door") && player.hasItem("Key"))
+                            {
+                                std::cout << "You used the Key to unlock the Door! A new maze will be generated." << std::endl;
+                                std::this_thread::sleep_for(std::chrono::milliseconds(300));
 
-                            // Generate a new map
-                            gameMap = Map(10, 10); // Create a new map
-                            gameMap.generateMaze(); // Generate the new maze
+                                // Remove the key and door from inventory
+                                player.discardItem("Key");
+                                player.discardItem("Door");
 
-                            // Reset the player's position
-                            player.setPosition(0, 0); // Start at the top-left corner
-                            gameMap.setTile(0, 0, '*'); // Mark the player's starting position
+                                // Generate a new map
+                                gameMap = Map(10, 10); // Create a new map
+                                gameMap.generateMaze(); // Generate the new maze
+
+                                // Reset the player's position
+                                player.setPosition(0, 0); // Start at the top-left
+                                gameMap.setTile(0, 0, '*'); // Mark the player's starting position
+                                player.gainXP(100);
+                            }
+                            gameMap.setTile(x, y, ' '); // Remove the item
                         }
 
-                        if (player.hasItem("Enemy"))
-                        {
-                            Enemy enemy;
-                            enemy.Damage_Player(20);
-                            player.discardItem("Enemy");
-                        }
-
-
-                        gameMap.setTile(x, y, ' '); // Remove Item
                     }
                     player.move(input, gameMap);
                 }

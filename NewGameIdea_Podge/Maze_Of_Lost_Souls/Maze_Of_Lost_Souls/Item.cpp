@@ -1,5 +1,5 @@
-#include "Item.h"
 #include <iostream>
+#include "Item.h"
 
 // Constructor to initialize item
 Item::Item(std::string name, std::string description) : name(name), description(description)
@@ -7,16 +7,16 @@ Item::Item(std::string name, std::string description) : name(name), description(
 
 }
 
-// Get the name of the item
-std::string Item::getName() const
-{
-    return name;
-}
-
 // Get the description of the item
 std::string Item::getDescription() const
 {
     return description;
+}
+
+// Get the name of the item
+std::string Item::getName() const
+{
+    return name;
 }
 
 // Print the item details

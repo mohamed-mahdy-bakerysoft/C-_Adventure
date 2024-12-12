@@ -4,8 +4,9 @@
 class Item
 {
 private:
-    std::string name;
+
     std::string description;
+    std::string name;
 
 public:
     // Constructor to initialize name and description

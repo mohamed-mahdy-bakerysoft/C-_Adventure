@@ -1,9 +1,9 @@
-#include <windows.h> // text color changes
-#include "Map.h"
+
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
+#include "Map.h"
+#include <windows.h> // text color changes
 // Constructor for Map
 Map::Map(int width, int height) : _width(width), _height(height)
 {
@@ -11,54 +11,25 @@ Map::Map(int width, int height) : _width(width), _height(height)
     srand(time(0));
 }
 
-void Map::setTile(int x, int y, char symbol)
-{
-    if (x >= 0 && x < _width && y >= 0 && y < _height)
-    {
-        map[y][x] = symbol;
-    }
-}
-
-
-void Map::printMap()
-{
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // found on google to make it more clear where player is
-
-    for (int y = 0; y < _height; ++y)
-    {
-        for (int x = 0; x < _width; ++x)
-        {
-            if (map[y][x] == '*') // If the tile is the *
-            {
-                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY); // Green color
-                std::cout << "[" << map[y][x] << "]";
-                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); // Reset color
-            }
-            else
-            {
-                std::cout << "[" << map[y][x] << "]"; // Print other tiles as-is
-            }
-        }
-        std::cout << std::endl;
-    }
-}
-
-
-bool Map::isWalkable(int x, int y)
-{
-    return x >= 0 && x < _width && y >= 0 && y < _height && map[y][x] != '#';
-}
-
-char Map::getTile(int x, int y)
-{
-    return map[y][x];
-}
-
+// Checks for Item
 bool Map::isItem(int x, int y)
 {
     return itemMap.find({ x, y }) != itemMap.end();
 }
 
+// Checks if Tile is Walkable
+bool Map::isWalkable(int x, int y)
+{
+    return x >= 0 && x < _width && y >= 0 && y < _height && map[y][x] != '#';
+}
+
+// Gets Tile 
+char Map::getTile(int x, int y)
+{
+    return map[y][x];
+}
+
+// Collects Item and erases from Map
 Item Map::getItem(int x, int y)
 {
     auto it = itemMap.find({ x, y });
@@ -71,6 +42,24 @@ Item Map::getItem(int x, int y)
     throw std::runtime_error("Item not found.");
 }
 
+// Generates the Maze
+void Map::generateMaze()
+{
+    for (int y = 0; y < _height; ++y)
+    {
+        for (int x = 0; x < _width; ++x)
+        {
+            if (rand() % 10 < 2)
+            {
+                setTile(x, y, '#');
+            }
+        }
+    }
+
+    placeItemsOnMap();// places items within game
+}
+
+// Places Items on the Map
 void Map::placeItemsOnMap()
 {
     bool keyPlaced = false;
@@ -98,7 +87,7 @@ void Map::placeItemsOnMap()
             }
             else if (!enemyPlaced)
             {
-                setTile(x, y, 'x'); // named x for testing
+                setTile(x, y, 'p'); // named x for testing
                 itemMap[{x, y}] = Item("Enemy", "Enemie to damage.");
                 enemyPlaced = true;
             }
@@ -119,18 +108,35 @@ void Map::placeItemsOnMap()
     }
 }
 
-void Map::generateMaze()
+// Prints Map and Player Sprite
+void Map::printMap()
 {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // found on google to make it more clear where player is
+
     for (int y = 0; y < _height; ++y)
     {
         for (int x = 0; x < _width; ++x)
         {
-            if (rand() % 10 < 2)
+            if (map[y][x] == '*') // If the tile is the *
             {
-                setTile(x, y, '#');
+                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY); // Green color
+                std::cout << "[" << map[y][x] << "]";
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); // Reset color
+            }
+            else
+            {
+                std::cout << "[" << map[y][x] << "]"; // Print other tiles as-is
             }
         }
+        std::cout << std::endl;
     }
+}
 
-    placeItemsOnMap();// places items within game
+// Sets Tile
+void Map::setTile(int x, int y, char symbol)
+{
+    if (x >= 0 && x < _width && y >= 0 && y < _height)
+    {
+        map[y][x] = symbol;
+    }
 }
