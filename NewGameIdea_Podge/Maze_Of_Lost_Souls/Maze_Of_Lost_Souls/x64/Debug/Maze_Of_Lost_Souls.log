@@ -1,4 +1,5 @@
 ﻿  Enemy.cpp
+  GameManager.cpp
   Item.cpp
   Main.cpp
   Map.cpp

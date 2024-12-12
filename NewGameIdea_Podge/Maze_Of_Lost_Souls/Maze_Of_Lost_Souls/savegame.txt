@@ -1,3 +1,3 @@
-Liam 80 107 2 3
-Potion Restores health.
+liam 50 111 0 7
+Key A key to open locked doors.
 Potion Restores health.
