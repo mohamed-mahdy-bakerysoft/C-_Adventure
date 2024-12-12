@@ -47,6 +47,7 @@ void Player::move(char direction, Map& gameMap)
     }
 }
 
+
 // Add an item to the inventory
 void Player::collectItem(const Item& item)
 {
@@ -66,6 +67,7 @@ void Player::collectItem(const Item& item)
         }
     }
 }
+
 
 // Display the player's inventory
 void Player::showInventory()

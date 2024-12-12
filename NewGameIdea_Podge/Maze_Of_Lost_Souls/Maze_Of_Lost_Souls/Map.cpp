@@ -99,7 +99,7 @@ void Map::placeItemsOnMap()
             else if (!enemyPlaced)
             {
                 setTile(x, y, 'x'); // named x for testing
-                
+                itemMap[{x, y}] = Item("Enemy", "Enemie to damage.");
                 enemyPlaced = true;
             }
         }

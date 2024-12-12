@@ -12,10 +12,15 @@ Enemy::Enemy(){}
 
 
 
-void Enemy::Damage_Player(int Damage)
+void Enemy::Damage_Player(int amount)
 {
-	
+    health = amount;
 
-	player.setHealth(player.getHealth() - Damage);
-	std::cout << "Player's health: " << player.getHealth() << std::endl;
+    if (health > 100) // Assuming max health is 100
+    {
+        health = 100;
+    }
+
+	//player.setHealth(player.getHealth() - Damage);
+	//std::cout << "Player's health: " << player.getHealth() << std::endl;
 }

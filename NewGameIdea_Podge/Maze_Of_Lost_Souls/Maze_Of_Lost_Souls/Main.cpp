@@ -62,7 +62,7 @@ void loadGame(Player& player, Map& gameMap)
     // Read player data
     if (!(loadFile >> playerName >> health >> xp >> x >> y))
     {
-        std::cerr << "Error reading player data. Starting a new game." << std::endl;
+        std::cout << "Error reading player data. Starting a new game." << std::endl;
         return;
     }
 
@@ -191,6 +191,7 @@ int main()
                             // Reset the player's position
                             player.setPosition(0, 0); // Start at the top-left
                             gameMap.setTile(0, 0, '*'); // Mark the player's starting position
+                            player.gainXP(100);
                         }
 
                         /*else if (item.getName() == "Enemy")
@@ -230,6 +231,7 @@ int main()
 
                 if (input == 'q') // Quit the game
                 {
+                    saveGame(player);
                     break;
                 }
                 else if (input == 'i') // Toggle inventory visibility
@@ -286,11 +288,12 @@ int main()
                             gameMap.setTile(0, 0, '*'); // Mark the player's starting position
                         }
 
-                        /*if (item.getName() == "Enemy")
+                        if (player.hasItem("Enemy"))
                         {
                             Enemy enemy;
                             enemy.Damage_Player(20);
-                        }*/
+                            player.discardItem("Enemy");
+                        }
 
 
                         gameMap.setTile(x, y, ' '); // Remove Item
